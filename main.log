@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  8 MAY 2018 17:22
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.26)  8 MAY 2018 18:49
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 entering extended mode
 **./main.tex
 (main.tex
@@ -457,7 +461,11 @@ Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
+<<<<<<< HEAD
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+=======
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
@@ -709,7 +717,11 @@ Package: mcode 2012/08/31 2.3
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
+<<<<<<< HEAD
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+=======
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -1110,18 +1122,82 @@ been already used, duplicate ignored
                    \relax 
 l.50 \input
            {./parts/intro} [1] (parts/intro.tex
+<<<<<<< HEAD
 Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)                    date: 2018-05-08 17:21:19
 (epstopdf)                    size: 106188 bytes
 (epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-05-08 17:21:19
+=======
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 30555 bytes
+(epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
+-to.pdf ./pics/sample.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+<./pics/sample-eps-converted-to.pdf, id=81, 577.15625pt x 449.68pt>
+File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./pics/sample-eps-converted-to.pdf>
+Package pdftex.def Info: ./pics/sample-eps-converted-to.pdf used on input line 
+8.
+(pdftex.def)             Requested size: 519.43582pt x 404.70825pt.
+
+Overfull \hbox (35.73895pt too wide) in paragraph at lines 8--9
+ [][] 
+ []
+
+[2 <./pics/sample-eps-converted-to.pdf>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 19.
+ (code/sample.m [3]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 61.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)))
+(parts/descripcio.tex [4]
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 30555 bytes
+(epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
+-to.pdf ./pics/sample.eps>
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
+File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
+ <use ./pics/sample-eps-converted-to.pdf>
+Package pdftex.def Info: ./pics/sample-eps-converted-to.pdf used on input line 
+22.
+(pdftex.def)             Requested size: 519.43582pt x 404.70825pt.
+
+Overfull \hbox (35.73895pt too wide) in paragraph at lines 22--23
+ [][] 
+ []
+
+(code/sample.m [5] [6])) (parts/parametric.tex
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 (epstopdf)                    size: 30555 bytes
 (epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
 -to.pdf ./pics/sample.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
+<<<<<<< HEAD
 
 <./pics/sample-eps-converted-to.pdf, id=81, 577.15625pt x 449.68pt>
+=======
 File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/sample-eps-converted-to.pdf>
@@ -1133,6 +1209,30 @@ Overfull \hbox (35.73895pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
+[7] (code/sample.m [8] [9])) (parts/fan.tex
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 30555 bytes
+(epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
+-to.pdf ./pics/sample.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
+File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./pics/sample-eps-converted-to.pdf>
+Package pdftex.def Info: ./pics/sample-eps-converted-to.pdf used on input line 
+5.
+(pdftex.def)             Requested size: 519.43582pt x 404.70825pt.
+
+Overfull \hbox (35.73895pt too wide) in paragraph at lines 5--6
+ [][] 
+ []
+
+<<<<<<< HEAD
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 16.
 (code/sample.m [2 <./pics/sample-eps-converted-to.pdf>]
@@ -1224,16 +1324,45 @@ Package pdftex.def Info: ./pics/sample-eps-converted-to.pdf used on input line
 5.
 (pdftex.def)             Requested size: 519.43582pt x 404.70825pt.
 
+=======
+[10] (code/sample.m [11])) (parts/postcombustor.tex
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 30555 bytes
+(epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
+-to.pdf ./pics/sample.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
+File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./pics/sample-eps-converted-to.pdf>
+Package pdftex.def Info: ./pics/sample-eps-converted-to.pdf used on input line 
+5.
+(pdftex.def)             Requested size: 519.43582pt x 404.70825pt.
+
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 Overfull \hbox (35.73895pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
+<<<<<<< HEAD
 [12] (code/sample.m [13])) (parts/consum.tex
 Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)                    date: 2018-05-08 17:21:19
 (epstopdf)                    size: 106188 bytes
 (epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-05-08 17:21:19
+=======
+[12] (code/sample.m [13] [14])) (parts/consum.tex
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 (epstopdf)                    size: 30555 bytes
 (epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
 -to.pdf ./pics/sample.eps>
@@ -1250,12 +1379,21 @@ Overfull \hbox (35.73895pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
+<<<<<<< HEAD
 [14] (code/sample.m [15] [16])) (parts/dimensionat.tex
 Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)                    date: 2018-05-08 17:21:19
 (epstopdf)                    size: 106188 bytes
 (epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-05-08 17:21:19
+=======
+[15] (code/sample.m [16])) (parts/dimensionat.tex
+Package epstopdf Info: Source file: <./pics/sample.eps>
+(epstopdf)                    date: 2018-05-08 17:24:22
+(epstopdf)                    size: 106188 bytes
+(epstopdf)             Output file: <./pics/sample-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-08 17:24:22
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 (epstopdf)                    size: 30555 bytes
 (epstopdf)             Command: <epstopdf --outfile=./pics/sample-eps-converted
 -to.pdf ./pics/sample.eps>
@@ -1272,13 +1410,21 @@ Overfull \hbox (35.73895pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
+<<<<<<< HEAD
 [17] (code/sample.m [18])) [19] (main.bbl
+=======
+[17] (code/sample.m [18] [19])) [20] (main.bbl
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
+<<<<<<< HEAD
  [20]
+=======
+ [21]
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
@@ -1292,6 +1438,7 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  13274 strings out of 493333
  189691 string characters out of 3139194
  334288 words of memory out of 3000000
@@ -1315,5 +1462,32 @@ Output written on main.pdf (21 pages, 291339 bytes).
 PDF statistics:
  984 PDF objects out of 1000 (max. 8388607)
  669 named destinations out of 1000 (max. 500000)
+=======
+ 13280 strings out of 493334
+ 189689 string characters out of 3139235
+ 333288 words of memory out of 3000000
+ 15870 multiletter control sequences out of 15000+200000
+ 13813 words of font info for 53 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,8n,81p,988b,1947s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Pr
+ogram Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/cm-super/sfrm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/cou
+rier/ucrr8a.pfb>
+Output written on main.pdf (22 pages, 307971 bytes).
+PDF statistics:
+ 993 PDF objects out of 1000 (max. 8388607)
+ 670 named destinations out of 1000 (max. 500000)
+>>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
  62 words of extra memory for PDF output out of 10000 (max. 10000000)
 
