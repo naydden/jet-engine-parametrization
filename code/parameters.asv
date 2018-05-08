@@ -1,0 +1,35 @@
+clear; clc; close all;
+%{
+%}
+%C = @tau2pi;
+%% Values
+T.t4 = 1780; %[K]
+h = 9500; %[m]
+[T0, a0, P0, rho0] = atmosisa(h);
+v0 = 600/3.6; %[m/s]
+lamb = 1.4;
+
+%Calculations
+M0 = v0/a0;
+T.t0 = T0*(1+(lamb-1)/2*M0^2);
+TAU.lamb = T.t4/T0;
+TAU.r = T.t0/T0;
+
+
+%% OPTIMIZATION
+%input {PI.c, alpha}
+inc_c = 0.1;
+inc_a = 0.1;
+
+i = 1;
+j = 1;
+PI.c = 1 : inc_c : 20;
+
+for pc = PI.c
+    TA
+    for alpha = 1: inc_a : 30  
+        TAU.f = (TAU.lamb - TAU.r*(TAU.c - 1) - TAU.lamb/(TAU.r*TAU.c) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
+        PI.f = tau2pi(TAU.f, lamb);
+    end
+end
+
