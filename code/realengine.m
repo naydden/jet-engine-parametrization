@@ -5,24 +5,25 @@ function [ PI,TAU,T,P,f ] =realengine( PI,TAU,T0,P0,M0,T,P,CP,lamb,alpha)
 %%sortida de la turbina d'un motor real. 
 PI.cH=PI.c/PI.f;
 %Eficiencies rati de pressió:
-% PI.d=0.96;
-% ETA.f=0.98; %Suposició
-% ETA.cH=0.98;
-% PI.b=0.94;
-% ETA.b=0.99;
-% ETA.tH=0.87;
-% ETA.tL=0.87;
-% PI.n=0.98;
-% ETA.mec=0.99;
 h=43e6; 
-ETA.f=1;
-PI.d=0.92;
-ETA.cH=0.86;
-PI.b=0.97;
-ETA.b=0.98;
-ETA.tH=0.92;
-ETA.tL=1;
-ETA.mec=1;
+PI.d=0.96;
+ETA.f=0.98; %Suposició
+ETA.cH=0.98;
+PI.b=0.94;
+ETA.b=0.99;
+ETA.tH=0.87;
+ETA.tL=0.87;
+PI.n=0.98;
+ETA.mec=0.99;
+% %Per probar el codi:
+% ETA.f=1;
+% PI.d=0.92;
+% ETA.cH=0.86;
+% PI.b=0.97;
+% ETA.b=0.98;
+% ETA.tH=0.92;
+% ETA.tL=1;
+% ETA.mec=1;
 
 %Difusor 
 T.t2=T.t0;
