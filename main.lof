@@ -1,16 +1,2 @@
-\select@language {english}
-\contentsline {figure}{\numberline {1}{\ignorespaces Sample Caption\relax }}{2}{figure.caption.4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Sample Caption\relax }}{5}{figure.caption.5}
-<<<<<<< HEAD
-\contentsline {figure}{\numberline {3}{\ignorespaces Sample Caption\relax }}{7}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Sample Caption\relax }}{10}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces Sample Caption\relax }}{12}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Sample Caption\relax }}{15}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Sample Caption\relax }}{17}{figure.caption.10}
-=======
-\contentsline {figure}{\numberline {3}{\ignorespaces Sample Caption\relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Sample Caption\relax }}{10}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces Sample Caption\relax }}{13}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Sample Caption\relax }}{15}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Sample Caption\relax }}{18}{figure.caption.10}
->>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
+\select@language {catalan}
+\contentsline {figure}{\numberline {1}{\ignorespaces Sample Caption\relax }}{9}{figure.caption.4}

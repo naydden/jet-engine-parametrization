@@ -1,14 +1,9 @@
-\select@language {english}
+\select@language {catalan}
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o} i Objectius}{2}{section.1}
-\contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{4}{section.2}
-\contentsline {section}{\numberline {3}C\IeC {\`a}lcul param\IeC {\`e}tric del motor i optimitzaci\IeC {\'o} per a les condicions de disseny}{7}{section.3}
-<<<<<<< HEAD
-\contentsline {section}{\numberline {4}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{9}{section.4}
-\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{12}{section.5}
-\contentsline {section}{\numberline {6}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{14}{section.6}
-=======
-\contentsline {section}{\numberline {4}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{10}{section.4}
-\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{12}{section.5}
-\contentsline {section}{\numberline {6}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{15}{section.6}
->>>>>>> 710f77e90ebdd85a3d5f71d89362365aaa94970e
-\contentsline {section}{\numberline {7}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{17}{section.7}
+\contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{3}{section.2}
+\contentsline {section}{\numberline {3}C\IeC {\`a}lcul param\IeC {\`e}tric del motor i optimitzaci\IeC {\'o} per a les condicions de disseny}{4}{section.3}
+\contentsline {section}{\numberline {4}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{5}{section.4}
+\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{6}{section.5}
+\contentsline {section}{\numberline {6}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{7}{section.6}
+\contentsline {section}{\numberline {7}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{8}{section.7}
+\contentsline {section}{\numberline {8}Sample Section}{9}{section.8}
