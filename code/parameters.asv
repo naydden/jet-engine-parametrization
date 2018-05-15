@@ -75,7 +75,6 @@ M9 = zeros(74,38);
 M19 = zeros(74,38);
 gc = 6.674e-11;%[ m3?kg?1?s?2] constante newton
 P0_P9 = 1;
-P0_P19 = 1;
 for pc = PI.c
     f(i) = (TAU.lamb - TAU.r*TAU.c(i))/(ETA.b*h/(CP.cold*T0)-TAU.lamb);
     for alpha = 0: inc_a : 30
@@ -95,11 +94,17 @@ for pc = PI.c
         T.T19_T0(i,j) = TAU.lamb*TAU.f(i,j)/(pi2tau(P.t19_19(i,j),gam.cold));
         V.v19_a0(i,j) = M19(i,j)*sqrt(T.T19_T0(i,j));
         
-        F.adim(i,j) = a0/((1+alpha)*gc)*((1+f(i))*V.v9_a0(i,j)-M0+(1+f(i))*...
+        F.adim = a0/((1+alpha)*gc)*((1+f(i))*V.v9_a0(i,j)-M0+(1+f)*...
             (R.t*T.T9_T0(i,j)*(1-P0_P9))/(R.c*V.v9_a0(i,j)*gam.cold))+...
             alpha*a0/((1+alpha)*gc)*(V.v19_a0(i,j)-M0+...
-            T.T19_T0(i,j)/V.v19_a0(i,j)*(1-P0_P19)/gam.cold);
-                
+            T.T19_T0(i,j)/V.v19_a0(i,j)*(1-P0_P19;
+        
+        
+        
+        
+        
+        
+        
         j = j + 1;
     end
     j = 1;
