@@ -39,8 +39,8 @@ PI.r=pi2tau(TAU.r,gam.cold);
 inc_c = 0.4;
 inc_a = 0.1;
 
-max_alpha = 10;
-max_c = 50;
+max_alpha = 5;
+max_c = 30;
 
 i = 1;
 j = 1;
@@ -132,6 +132,7 @@ for i = 1:I
         end
     end
 end
+%{
 j = 1;
 TOL.val = 2.5/100;
 alpha = 0: inc_a : max_alpha;
@@ -155,12 +156,45 @@ end
 maxPIc = find(F.adim_c(:,column) == max(F.adim_c(:,column)));
 PI.c_slct = PI.c(maxPIc);
 PI.f_slct = PI.f(maxPIc, column);
+%}
 
+%% Select max's line
+for i = 1:I
+    F.maxs(i) = max(F.adim_c(i,:));
+ 
+    vol = find(F.adim_c(i,:) == max(F.adim_c(i,:)));
+    F.alpha_pos(i) = vol(1);
+end
+i = 1;
+TOL.val = 2.5/100;
+alpha = 0: inc_a : max_alpha;
+F.alpha = 0: inc_a : max_alpha;
+
+TOL.c = 100;
+while TOL.c > TOL.val
+    if i <= I - 1
+        TOL.c = ((F.maxs(i+1)-F.maxs(i))/...
+            (PI.c(i+1)-PI.c(i)));
+    else
+        TOL.c = 0;
+    end 
+    F.PIc = (PI.c(i+1)+PI.c(i))/2;
+    F.a = F.alpha(F.alpha_pos(i));
+    i = i + 1;
+end
+
+F.PIf = PI.f(i-1, F.alpha_pos(i));
 
 %% Plot
 % figure()
 % plot(alpha, F.adim_c');
 % figure()
 % plot(PI.c, F.adim_c);
+figure();
+surf(PI.c,alpha,F.adim_c'/a0)
+xlabel('\pi_c'); ylabel('\alpha'); zlabel('\bar F');
+figure();
+plot(PI.c, F.maxs)
+xlabel('\pi_c'); ylabel('$$\hat{F}$$','Interpreter','Latex');
 
 
