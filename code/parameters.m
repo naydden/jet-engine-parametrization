@@ -49,6 +49,7 @@ PI.c = 1 : inc_c : max_c;
 for pc = PI.c
     TAU.c(i) = pi2tau(pc, gam.cold); 
     for alpha = 0: inc_a : max_alpha
+        
         TAU.f(i,j) = (TAU.lamb - TAU.r*(TAU.c(i) - 1) - TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
         PI.f(i,j) = tau2pi(TAU.f(i,j), gam.cold);
         j = j + 1;
@@ -77,7 +78,7 @@ j = 1;
 f = zeros(size(PI.c));
 M9 = zeros(I,J);
 M19 = zeros(I,J);
-gc = 6.674e-11;%[ m3?kg?1?s?2] constante newton
+gc = 1;%[ m3?kg?1?s?2] constante newton
 
 for pc = PI.c
     f(i) = (TAU.lamb - TAU.r*TAU.c(i))/(ETA.b*h/(CP.cold*T0)-TAU.lamb);
@@ -183,7 +184,8 @@ while TOL.c > TOL.val
     i = i + 1;
 end
 
-F.PIf = PI.f(i-1, F.alpha_pos(i));
+F.PIf = PI.f(i-1, F.alpha_pos(i-1));
+F.f = f(i-1);
 
 %% Plot
 % figure()
@@ -191,10 +193,12 @@ F.PIf = PI.f(i-1, F.alpha_pos(i));
 % figure()
 % plot(PI.c, F.adim_c);
 figure();
-surf(PI.c,alpha,F.adim_c'/a0)
-xlabel('\pi_c'); ylabel('\alpha'); zlabel('\bar F');
+surf(PI.c,alpha,F.adim_c')
+xlabel('\pi_c'); ylabel('\alpha'); zlabel('$$\hat{F}$$','Interpreter','Latex');
 figure();
 plot(PI.c, F.maxs)
 xlabel('\pi_c'); ylabel('$$\hat{F}$$','Interpreter','Latex');
-
+figure();
+surf(PI.c,alpha,PI.f')
+xlabel('\pi_c'); ylabel('\alpha'); zlabel('\pi_f');
 
