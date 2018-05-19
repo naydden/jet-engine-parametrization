@@ -1,11 +1,15 @@
 %Per provar el codi de realengine.
-PI.f=1;
+F=25000; %N
+PI.f=1.4;
 PI.c=25;
 T.t4=1700;
 alpha=1;
 T0=245;
 P0=60000;
 M0=0.8;
+rho0=1.225;
+Rgas=287;
+a0=sqrt(rho0*Rgas*T0);
 gam.cold=1.4;
 gam.hot=1.4;
 TAU.r=1.128;
@@ -37,14 +41,20 @@ mixer=false;
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
 if mixer == true
   %COMPUTE THE MIXER  
+  [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,mixer);
 else
     P.t6=P.t5;
     T.t6=T.t5;
     P.t16=P.t13;
     T.t16=P.t13;
+    TAU.b=tau2pi(PI.b,gam.hot);
+    TAU.n=tau2pi(PI.n,gam.hot);
+    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,mixer );
+    [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
 end
-TAU.b=tau2pi(PI.b,gam.hot);
-TAU.n=tau2pi(PI.n,gam.hot);
-[ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU );
-[ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
-%[ P9,T9,P19,T19,Fadim,M9,M19 ] = Nozzle( T,P,PI,ETA,P0,T0,alpha,gam,f,M0);
+Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,mixer,T0,M0,P0);
+[ m0,mf ] = Fluxosmasics( f,Fadim,F,a0);
+%Cálcul árees:
+M5=1;
+m5=m0+mf;
+A.e5 = Area(M5,gam.hot,P.t5,T.t5,Rgas,m5);
