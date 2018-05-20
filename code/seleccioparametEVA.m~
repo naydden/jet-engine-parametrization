@@ -71,7 +71,7 @@ for pc = PI.c
     Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
     if (Fadim(i)-Fadim_anterior)/Fadim(i) < 0.0001
          pc
-         fprintf('The opoptimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n', pf,pc,alpha(i));
+         fprintf('The opoptimum values are: %d feet.\n', hp);
          break
     else
          Fadim_anterior = Fadim(i);
