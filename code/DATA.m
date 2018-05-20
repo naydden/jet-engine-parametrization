@@ -1,11 +1,11 @@
-%% PARÀMETRES GENERALS DONATS
+%% PARï¿½METRES GENERALS DONATS
 %Thrusts
 F=25000; %N
 
 %Velocitat
 v0 = 600/3.6; %[m/s] 600
 
-%Càmara combustió
+%Cï¿½mara combustiï¿½
 T.t4=1780;
 h=43e6; 
 
@@ -14,6 +14,8 @@ T0=226.4000; %[K]
 P0=2.8524e+04; %[Pa]
 rho0=0.4389; %[kg/m^3]
 Rgas=287;
+R.cold = 287;
+R.hot = 287;
 % a0=sqrt(rho0*Rgas*T0); %301.6361
 a0 = 301.6361;%[m/s^2]
 %     %atmosisa
@@ -29,9 +31,9 @@ CP.cold=1004;
 gc = 1;
 %In engineering, gc is a unit conversion factor used to convert mass to force or vice versa
 
-%Parámetres del motor real
+%Parametres del motor real
 PI.d=0.96;
-ETA.f=0.98; %Suposició
+ETA.f=0.98; %Suposicio
 ETA.cH=0.98;
 PI.b=0.94;
 ETA.b=0.99;
@@ -46,7 +48,7 @@ T.t0 = T0*(1+(gam.cold-1)/2*M0^2);
 P.t0=P0*(1+(gam.cold-1)/2*M0^2)^(gam.cold/(gam.cold-1));
 TAU.lamb = T.t4/T0; 
 %---------------------
-TAU.gam=T.t4/T0; %OJO, és igual a TAU.lamb, només canvia el nom
+TAU.gam=T.t4/T0; %OJO, ï¿½s igual a TAU.lamb, nomï¿½s canvia el nom
 %---------------------
 TAU.r = T.t0/T0;
 PI.r=pi2tau(TAU.r,gam.cold);
