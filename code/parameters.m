@@ -51,6 +51,7 @@ for pc = PI.c
     for alpha = 0: inc_a : max_alpha
         
         TAU.f(i,j) = (TAU.lamb - TAU.r*(TAU.c(i) - 1) - TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
+        %TAU.f(i,j)=(TAU.lamb*TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
         PI.f(i,j) = tau2pi(TAU.f(i,j), gam.cold);
         j = j + 1;
     end
