@@ -6,24 +6,25 @@ F=25000; %N
 v0 = 600/3.6; %[m/s] 600
 
 %Càmara combustió
-T.t4=1700;
+T.t4=1780;
 h=43e6; 
 
 %Condicions ambientals
-T0=245;
-P0=60000;
-rho0=1.225;
+T0=226.4000; %[K]
+P0=2.8524e+04; %[Pa]
+rho0=0.4389; %[kg/m^3]
 Rgas=287;
-a0=sqrt(rho0*Rgas*T0);
+% a0=sqrt(rho0*Rgas*T0); %301.6361
+a0 = 301.6361;%[m/s^2]
 %     %atmosisa
 %     height = 9500; %[m]
 %     [T0, a0, P0, rho0] = atmosisa(height);
 
 gam.cold=1.4;
-gam.hot=1.4;
+gam.hot=1.3;
 
-CP.hot=1005;
-CP.cold=1005;
+CP.hot=1200;
+CP.cold=1004;
 
 gc = 1;
 %In engineering, gc is a unit conversion factor used to convert mass to force or vice versa
@@ -45,7 +46,7 @@ T.t0 = T0*(1+(gam.cold-1)/2*M0^2);
 P.t0=P0*(1+(gam.cold-1)/2*M0^2)^(gam.cold/(gam.cold-1));
 TAU.lamb = T.t4/T0; 
 %---------------------
-TAU.gam=T.t4/T0; %OJO, és igual a TAU.lamb?
+TAU.gam=T.t4/T0; %OJO, és igual a TAU.lamb, només canvia el nom
 %---------------------
 TAU.r = T.t0/T0;
 PI.r=pi2tau(TAU.r,gam.cold);
