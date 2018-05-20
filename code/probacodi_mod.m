@@ -4,6 +4,8 @@ clc; clear; close all;
 20/05/2018
 %}
 %% INPUT - carregar paràmetres generals
+%Add to path functions folder
+addpath('./functions')
 % Define input data files
 NAME_INPUT_DATA = 'DATA' ; %Fitxer amb dades generals donades
 % Load data files
