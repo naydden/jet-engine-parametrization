@@ -63,6 +63,7 @@ surf(PI.c,PI.f,alpha');
 xlabel('\pi_c'); ylabel('\pi_f'); zlabel('\alpha');
 
 Fadim_anterior = 0;
+pc_opt = 0;
 for pc = PI.c
     TAU.c(i) = pi2tau(pc, gam.cold); 
     pf = 6;
@@ -70,11 +71,27 @@ for pc = PI.c
     alpha(i)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
     Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
     if (Fadim(i)-Fadim_anterior)/Fadim(i) < 0.0001
-         pc
-         fprintf('The opoptimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n', pf,pc,alpha(i));
+         pc_opt = pc;
          break
     else
          Fadim_anterior = Fadim(i);
     end
     i = i + 1;
 end
+pf_opt = 0;
+for pf = PI.f
+    pc = pc_opt;
+    TAU.c(i) = pi2tau(pc, gam.cold); 
+    TAU.f(i) = pi2tau(pf, gam.cold);
+    alpha(i)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
+    Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
+    if abs((Fadim(i)-Fadim_anterior)/Fadim(i)) < 0.05
+        pf_opt = pf;
+         break
+    else
+         Fadim_anterior = Fadim(i);
+    end
+    i = i + 1;
+end
+
+fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n', pf_opt, pc_opt,alpha(i));
