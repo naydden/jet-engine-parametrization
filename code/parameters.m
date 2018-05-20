@@ -50,8 +50,8 @@ for pc = PI.c
     TAU.c(i) = pi2tau(pc, gam.cold); 
     for alpha = 0: inc_a : max_alpha
         
-        TAU.f(i,j) = (TAU.lamb - TAU.r*(TAU.c(i) - 1) - TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
-        %TAU.f(i,j)=(TAU.lamb*TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
+        %TAU.f(i,j) = (TAU.lamb - TAU.r*(TAU.c(i) - 1) - TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
+        TAU.f(i,j)=(TAU.lamb*TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i)) + alpha*TAU.r+1)*1/(TAU.r*(1+alpha));
         PI.f(i,j) = tau2pi(TAU.f(i,j), gam.cold);
         j = j + 1;
     end
@@ -60,6 +60,16 @@ for pc = PI.c
 end
 %alpha = 0: inc_a : max_alpha;
 [I,J] = size(PI.f);
+%look for real values
+for i = 1:I
+    for j = 1:J
+        if isreal(PI.f(i,j))
+            PI.f(i,j) = PI.f(i,j);
+        else
+            PI.f(i,j) = 0;
+        end
+    end
+end
 %% PLOT
 % surf(PI.c, alpha, PI.f')
 % xlabel('\pi_c'); ylabel('\alpha'); zlabel('\pi_f');
