@@ -1,5 +1,5 @@
-function [ T,TAU,PI,P ] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI,alpha)
-T.t45=T.t4-(T.t3-T.t25)*(1+alpha)*(CP.cold/(ETA.mec*(1+f)*CP.hot));
+function [ T,TAU,PI,P ] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI)
+T.t45=T.t4-(T.t3-T.t25)*(CP.cold/(ETA.mec*(1+f)*CP.hot));
 TAU.tH=T.t45/T.t4;
 Ti.t45=T.t4-(T.t4-T.t45)/ETA.tH;
 TAUi.tH=Ti.t45/T.t4;
