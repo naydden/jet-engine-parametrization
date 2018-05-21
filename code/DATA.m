@@ -33,8 +33,8 @@ gc = 1;
 
 %Parametres del motor real
 PI.d=0.96;
-ETA.f=0.98; %Suposicio
-ETA.cH=0.98;
+ETA.f=0.88; %Suposicio
+ETA.cH=0.88;
 PI.b=0.94;
 ETA.b=0.99;
 ETA.tH=0.87;

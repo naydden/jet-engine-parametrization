@@ -20,9 +20,9 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
 [P,TAU,T] = Fan( P,PI,gam,ETA,T,TAU );
 [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA);
 [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0 );
-[T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI);
+[T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI,alpha);
 [T,TAU,PI,P ] = TurbinaBaixa(T,alpha,CP,f,ETA,gam,P,PI,TAU);
-isMixer=true;
+isMixer=false;
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
 if isMixer == true
     %COMPUTE THE MIXER  
@@ -47,4 +47,4 @@ end
 M5=1;
 m5=m0+mf;
 A.e5 = Area(M5,gam.hot,P.t5,T.t5,Rgas,m5);
-Fadim
+
