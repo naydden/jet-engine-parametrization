@@ -30,7 +30,6 @@ if isMixer == true
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);    
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
-    Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0); 
 else
     P.t6=P.t5;
     T.t6=T.t5;
@@ -40,11 +39,9 @@ else
     TAU.n=tau2pi(PI.n,gam.hot);
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
-    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);  
 end
-[ m0,mf ] = Fluxosmasics( f,Fadim,F,a0);  
 %Calcul Arees:
 M5=1;
 m5=m0+mf;
 A.e5 = Area(M5,gam.hot,P.t5,T.t5,Rgas,m5);
-Fadim
+
