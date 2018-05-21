@@ -35,7 +35,7 @@ else
     P.t6=P.t5;
     T.t6=T.t5;
     P.t16=P.t13;
-    T.t16=P.t13;
+    T.t16=T.t13;
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
