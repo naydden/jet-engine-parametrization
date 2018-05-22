@@ -51,7 +51,7 @@ end
 %Calcul Arees:
 M5=1;
 m5=m0+mf;
-A.e5 = Area(M5,gam.hot,P.t5,T.t5,Rgas,m5);
+A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
 
 if isAftBurner == true
     [ P,f_ab ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0);
