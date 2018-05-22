@@ -25,8 +25,8 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
 [T,TAU,PI,P ] = TurbinaBaixa(T,alpha,CP,f,ETA,gam,P,PI,TAU);
 
 %%
-isMixer=true;
-isAftBurner=false;
+isMixer=false;
+isAftBurner=true;
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
 if isMixer == true
     %COMPUTE THE MIXER  
@@ -54,7 +54,7 @@ m5=m0+mf;
 A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
 
 if isAftBurner == true
-    [ P,f_ab ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0);
+    [ P,f_AB ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f);
 else
 end
 
