@@ -51,4 +51,4 @@ TAU.lamb = T.t4/T0;
 TAU.gam=T.t4/T0; %OJO, �s igual a TAU.lamb, nom�s canvia el nom
 %---------------------
 TAU.r = T.t0/T0;
-PI.r=pi2tau(TAU.r,gam.cold);
+PI.r=tau2pi(TAU.r,gam.cold);

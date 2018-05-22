@@ -27,8 +27,8 @@ isMixer=false;
 if isMixer == true
     %COMPUTE THE MIXER  
     [ T,P,M6,gam,CP] = mixer(T,P,CP,gam,R,alpha,f);
-    TAU.b=tau2pi(PI.b,gam.hot);
-    TAU.n=tau2pi(PI.n,gam.hot);    
+    TAU.b=tau2pi(PI.b,gam.mixer);
+    TAU.n=tau2pi(PI.n,gam.mixer);    
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
     Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0); 
 else
