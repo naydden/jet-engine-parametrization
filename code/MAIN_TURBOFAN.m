@@ -42,7 +42,7 @@ else
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
     Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);  
 end
-[ m0,mf ] = Fluxosmasics( f,Fadim,F,a0);  
+[ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);  
 %Calcul Arees:
 M5=1;
 m5=m0+mf;
