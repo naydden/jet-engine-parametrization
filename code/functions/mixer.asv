@@ -16,7 +16,7 @@ P.s5 = P.t5 / ((1+((gam.hot-1)*0.5*M5^2))^(gam.hot/(gam.hot-1)));
 P.s13 = P.s5;
 P.s6 = P.s5;
 
-M13 = sqrt(2/(gam.cold-1)*((P.t13/P.s13)^((gam.cold-1)/(gam.cold))-1));
+M13 = sqrt(2/(gam.cold-1)*((P.t13/P.s13)^((gam.cold-1)/(gam.cold)))-1);
 
 % we find M6 now by computing F6 = F5 + F13
 phi_6 = R.mixer*T.t6/(gam.mixer*((sqrt(R.hot*T.t5/(gam.hot*phi(M5,gam.hot)))+alpha_p*sqrt(R.cold*T.t13/(gam.cold*phi(M13,gam.cold))))/(1+alpha_p))^2);
