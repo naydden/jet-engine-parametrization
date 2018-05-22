@@ -46,6 +46,10 @@ else
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
     Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);  
+    if isAftBurner == true
+        [ P,f_AB, fab ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9);
+    else
+    end
 end
 [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);  
 %Calcul Arees:
@@ -53,9 +57,6 @@ M5=1;
 m5=m0+mf;
 A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
 
-if isAftBurner == true
-    [ P,f_AB ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f);
-else
-end
+
 
 
