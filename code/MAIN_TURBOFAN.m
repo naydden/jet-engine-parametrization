@@ -31,7 +31,7 @@ if isTurboProp
 %     [P,f] = CambraCombustioTP( PI,P,CP,TAU,gam,ETA,h,T0,T );
 %     [T,TAU,PI,P] = TurbinaAltaTP( T,CP,ETA,f,gam,TAU,P,PI);
 %     [T,TAU,PI,P ] = TurbinaBaixaTP(T,alpha,CP,f,ETA,gam,P,PI,TAU, T0);
-%     [ T,P,M9 ] = ToveraTP( P0,T,PI,gam,P,TAU );
+%[ T,P,M9 ] = ToveraTP( P0,T,PI,gam,P,TAU );
 %     [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
     
 else
@@ -49,14 +49,15 @@ if isMixer
     %[ T, P, M6A, gam, CP] = mixer2(T,P, CP,gam,R, alpha,f, T0, PI, TAU);
     TAU.b=tau2pi(PI.b,gam.mixer);
     TAU.n=tau2pi(PI.n,gam.mixer);
-    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp);
+    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
     Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0);
 elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     P.t6=P.t5;
     T.t6=T.t5;
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);
-    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp);
+    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
+    [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
 else %Tovera sense turboporp ni mixer
     P.t6=P.t5;
     T.t6=T.t5;
@@ -64,7 +65,7 @@ else %Tovera sense turboporp ni mixer
     TAU.n=tau2pi(PI.n,gam.hot);
     P.t16=P.t13;
     T.t16=T.t13;
-    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
+    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
     Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     end
@@ -78,10 +79,9 @@ else %Tovera sense turboporp ni mixer
         %Empenta adimensional total
         Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     end
-
-
-
+if ~isTurboProp
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
+
     %Calcul Arees
     %Fluxos másics: 
     m5=m0+mf;
@@ -97,7 +97,7 @@ else %Tovera sense turboporp ni mixer
         A.e19 = Area(M19,gam.cold,P.t19,T.t19,R.cold,msec);
     end
 
-
+end
 
 
 
