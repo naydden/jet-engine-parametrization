@@ -5,6 +5,7 @@ PI.cH=PI.c/PI.f;
 if isTurboProp %No hi ha fan així que els valors 25 son iguals als valors 2
     P.t25=P.t2;
     T.t25=T.t2;
+    PI.cH=PI.c;
 end
 TAU.c=pi2tau(PI.c,gam.cold);
 P.t3=P.t25*PI.cH;
