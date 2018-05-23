@@ -72,20 +72,15 @@ end
 
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
     %Calcul Arees:
-    M5=1; %Suposició de Mach 5
-    %Fluxos másics: 
+    M5=1;
     m5=m0+mf;
-    msortida=m0+mf+msec;
-    mentrada=m0+msec;
-    
     A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
-    A.e0 = Area(M0,gam.cold,P.t0,T.t0,R.cold,mentrada);
-    if isMixer==true
-    A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,msortida);
+    A.e0 = Area(M0,gam.cold,P.t0,T.t0,R.cold,m0);
+    if isMixer=false
+    A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,m9);
     else
-        A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,m5);
-        A.e19 = Area(M19,gam.hot,P.t19,T.t19,R.hot,msec);
-    end
+        A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,m9);
+        A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,m9);
 
 
 
