@@ -45,24 +45,31 @@ end
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
 if isMixer
     %COMPUTE THE MIXER
-    %[ T,P,M6,gam,CP] = mixer(T,P,CP,gam,R,alpha,f);
-    [ T, P, M6A, gam, CP] = mixer2(T,P, CP,gam,R, alpha,f, T0, PI, TAU);
+    [ T,P,M6,gam,CP] = mixer(T,P,CP,gam,R,alpha,f);
+    %[ T, P, M6A, gam, CP] = mixer2(T,P, CP,gam,R, alpha,f, T0, PI, TAU);
     TAU.b=tau2pi(PI.b,gam.mixer);
     TAU.n=tau2pi(PI.n,gam.mixer);
-    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
+    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp);
     Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0);
-else
+elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     P.t6=P.t5;
     T.t6=T.t5;
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);
-    if ~isTurboProp
-        P.t16=P.t13;
-        T.t16=T.t13;
-        [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
-        [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
-        Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
+    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp);
+else %Tovera sense turboporp ni mixer
+    P.t6=P.t5;
+    T.t6=T.t5;
+    TAU.b=tau2pi(PI.b,gam.hot);
+    TAU.n=tau2pi(PI.n,gam.hot);
+    P.t16=P.t13;
+    T.t16=T.t13;
+    [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
+    [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
+    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     end
+    
+    
     
     %Afegir afterburner
     if isAftBurner
@@ -71,7 +78,7 @@ else
         %Empenta adimensional total
         Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     end
-end
+
 
 
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
