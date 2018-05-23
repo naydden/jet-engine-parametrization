@@ -76,9 +76,11 @@ else %Tovera sense turboporp ni mixer
     if isAftBurner
         [ P,f_AB, fab, Fadim_prim_AB, T] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9, M0, P0);
         f = f + f_AB;
-        [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
+        [ T,P,M9,PI,TAU ] = ToveraAFT( P0,T,PI,gam,P,TAU,ETA);
         %Empenta adimensional total
         Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0,isAftBurner);
+        [ m0af,mfaf,msecaf ] = Fluxosmasics( f,Fadim_AB,F,a0,alpha);
+
     end
 if ~isTurboProp
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
