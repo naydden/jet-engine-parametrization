@@ -52,3 +52,10 @@ TAU.gam=T.t4/T0; %OJO, �s igual a TAU.lamb, nom�s canvia el nom
 %---------------------
 TAU.r = T.t0/T0;
 PI.r=tau2pi(TAU.r,gam.cold);
+
+%% POST-COMBUSTOR
+%After Burner parameters
+gam.AB = gam.hot;
+CP.AB = CP.hot;
+T.t7 = 2400; %K
+ETA.AB = 0.98;

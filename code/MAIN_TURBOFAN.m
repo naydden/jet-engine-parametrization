@@ -1,6 +1,6 @@
 clc; clear; close all;
 %% TURBOFAN PARAMETRIC CALCULATION
-%{ 
+%{
 20/05/2018
 %}
 %% INPUT - carregar par�metres generals
@@ -29,13 +29,13 @@ isMixer=false;
 isAftBurner=true;
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
 if isMixer == true
-    %COMPUTE THE MIXER  
+    %COMPUTE THE MIXER
     %[ T,P,M6,gam,CP] = mixer(T,P,CP,gam,R,alpha,f);
     [ T, P, M6A, gam, CP] = mixer2(T,P, CP,gam,R, alpha,f, T0, PI, TAU);
     TAU.b=tau2pi(PI.b,gam.mixer);
-    TAU.n=tau2pi(PI.n,gam.mixer);    
+    TAU.n=tau2pi(PI.n,gam.mixer);
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
-    Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0); 
+    Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0);
 else
     P.t6=P.t5;
     T.t6=T.t5;
@@ -45,13 +45,17 @@ else
     TAU.n=tau2pi(PI.n,gam.hot);
     [ T,P,M9 ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
-    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);  
-    if isAftBurner == true
-        [ P,f_AB, fab ] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9);
+    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
+    %Afegir afterburner
+    if isAftBurner == true      
+        [ P,f_AB, fab, Fadim_prim_AB, T] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9, M0, P0);
+        f = f + f_AB;
+        %Empenta adimensional total
+        Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     else
     end
 end
-[ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);  
+[ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
 %Calcul Arees:
 M5=1;
 m5=m0+mf;
