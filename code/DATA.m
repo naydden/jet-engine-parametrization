@@ -47,9 +47,6 @@ M0 = v0/a0;
 T.t0 = T0*(1+(gam.cold-1)/2*M0^2);
 P.t0=P0*(1+(gam.cold-1)/2*M0^2)^(gam.cold/(gam.cold-1));
 TAU.lamb = T.t4/T0; 
-%---------------------
-TAU.gam=T.t4/T0; %OJO, �s igual a TAU.lamb, nom�s canvia el nom
-%---------------------
 TAU.r = T.t0/T0;
 PI.r=tau2pi(TAU.r,gam.cold);
 %% POST-COMBUSTOR
