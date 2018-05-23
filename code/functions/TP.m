@@ -16,9 +16,9 @@ else
 end
 V.v9_a0 = sqrt(2*TAU.lamb*TAU.tH*TAU.tL/(gam.cold-1)*(1-(P.t9/P.s9)^-((gam.hot-1)/gam.hot)));
 %Ho calculo jo T9/T0 
-T.s9_T0 = 1/(1+(gam.hot-1)/2*M9^2)*TAU.n*TAU.t*TAU.b;
+%T.s9_T0 = 1/(1+(gam.hot-1)/2*M9^2)*TAU.n*TAU.t*TAU.b;
 
-C.cin = (gam.cold-1)*M0*((1+f)*V.v9_a0-M0+(1+f)*R.hot/R.cold*((T.s9_T0)/V.v9_a0)*(1-P.s0_s9)/gam.cold);
+C.cin = (gam.cold-1)*M0*((1+f)*V.v9_a0-M0+(1+f)*R.hot/R.cold*((T.s9/T0)/V.v9_a0)*(1-P.s0_s9)/gam.cold);
 C.prop = ETA.prop*ETA.g*ETA.mL*(1+f)*TAU.lamb*TAU.tH*(1-TAU.tL);
 C.tot = C.cin + C.prop;
 

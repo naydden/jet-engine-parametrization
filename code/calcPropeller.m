@@ -1,3 +1,3 @@
-function D = calcPropeller(ETA, J, v0, n)
-D =  v0/(n*J);
+function n = calcPropeller(ETA, J, v0, D)
+n =  v0/(D*J);
 end
