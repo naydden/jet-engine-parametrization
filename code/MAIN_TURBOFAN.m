@@ -20,7 +20,7 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
-if isTurboProp
+if isTurboProp %optimització de la turbina
     %exercici 33 - es va seguint pas a pas
     [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA,isTurboProp);
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,isTurboProp );
@@ -40,7 +40,7 @@ elseif isTP %afegir una propeller
     J = 0.76;
     D = 2.6;
     n = calcPropeller(ETA, J, v0, D);
-else
+else %cas estandard turbofan
     [P,TAU,T] = Fan( P,PI,gam,ETA,T,TAU );
     [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA,isTurboProp);
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,isTurboProp );
