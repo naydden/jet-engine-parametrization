@@ -7,7 +7,7 @@ clc; clear; close all;
 %Add to path functions folder
 addpath('./functions')
 % Define input data files
-NAME_INPUT_DATA = 'DATArealverification' ; %Fitxer amb dades generals donades
+NAME_INPUT_DATA = 'DATApropverification' ; %Fitxer amb dades generals donades
 % Load data files
 eval(NAME_INPUT_DATA); %Carregar el codi
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
@@ -22,11 +22,11 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 %Dades si DATArealverification:
 PI.f=1;
 alpha=0;
-PI.c=25;
+PI.c=21.5;
 
 isMixer = false; % si està en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
-isTurboProp = false; % si esta en true col·loca un turboprop
+isTurboProp = true; % si esta en true col·loca un turboprop
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
