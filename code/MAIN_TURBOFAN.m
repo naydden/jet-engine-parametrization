@@ -11,7 +11,11 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
 isMixer = false; % si esta en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
+<<<<<<< HEAD
 isTurboProp = true; % si esta en true col·loca un turboprop
+=======
+isTurboProp = false; % si esta en true col·loca un turboprop
+>>>>>>> b6c39fdae1b3c6711d699ae59b68eeb4e69f77e5
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
@@ -36,7 +40,7 @@ elseif isTP %afegir una propeller
     %         [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h, CP, isTP );
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
     Tcore = C.cin*CP.hot*T0/v0; %Tcore/m0
-    Tprop = C.prop*CP.hot*T0/v0; %Tprop/m0
+    Tprop = C.prop*CP.cold*T0/v0; %Tprop/m0
     J = 0.76;
     D = 2.6;
     n = calcPropeller(ETA, J, v0, D);
@@ -107,7 +111,7 @@ if ~isTurboProp && ~isTP
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
     
     %Calcul Arees
-    %Fluxos m�sics:
+    %Fluxos masics:
     m5=m0+mf;
     msortida=m0+mf+msec;
     mentrada=m0+msec;

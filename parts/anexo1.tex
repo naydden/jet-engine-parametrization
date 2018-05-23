@@ -1,2 +1,203 @@
 \section{Annex: Verificació del codi}
 \label{anexo}
+Per tal de verificar el codi el que s'ha fet es variar els paràmetres d'entrada per les dades d'alguns dels problemes resolts a classe i a la guia de problemes. Seguidament, s'ha calculat la variació entre els resultats obtinguts a classe, que anomenarem manuals, amb els resultats computats pel codi utilitzat. S'han utilitzat quatre exercicis de la guia per fer la verificació:
+\begin{itemize}
+\item Problema 2.4: Verificació del càlcul del turbofan.
+\item Problema 4.2: Verificació del càlcul del motor amb eficiències. 
+\item Problema 2.5: Verificació del càlcul del mixer.
+\item Problema 3.3: Verificació del càlcul del trubopropeller considerant turbina per a extraure treball màxim.
+\end{itemize}
+No s'ha utilitzat cap exercici per a verificar el càlcul de l'afterburner ja que la seva implementació es molt similar a la de una cambra de combustió. 
+\subsection{Verificació turbofan}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule[3pt]
+\textbf{Paràmetre}&\textbf{Valor}\\
+\midrule[1pt]
+$\pi_f$	&1.5\\
+
+$\pi_c$	12\\
+
+$\alpha	$&6\\
+
+F(N)	&50000\\
+
+$T_{t4}$&1143\\
+
+altura de vol (m)	&0\\
+
+Mach de vol	&0\\
+
+
+
+\bottomrule[2pt]
+\end{tabular}
+\caption{Dades del problema 2.4}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule[3pt]
+\textbf{Paràmetre} &\textbf{ Guia problemes} &\textbf{ Codi}    & \textbf{Error relatiu (\%)} \\
+\midrule[1pt]
+$\tau_c$     & 2.03           & 2.0339  & 0.192              \\
+$\tau_f$    & 1.12           & 1.1228  & 0.249              \\
+$\pi_r$  & 1              & 1       & 0.000              \\
+$\tau_r$     & 1              & 1       & 0.000              \\
+$\tau_\lambda$  & 3.97           & 3.9667  & 0.083              \\
+$\tau_{tH}$  & 0.77           & 0.7733  & 0.427              \\
+$\pi_{tH}$    & 0.4            & 0.4067  & 1.647              \\
+$\tau_{tL}$     & 0.725          & 0.7234  & 0.221              \\
+$\pi_{tL}$    & 0.324          & 0.322   & 0.621              \\
+$M_9$        & 0.82           & 0.8303  & 1.241              \\
+$M_{19}$       & 0.783          & 0.7837  & 0.089              \\
+$F_{adim}$     & 5.836          & 5.877   & 0.698              \\
+$m_0$    & 26.2           & 25.0038 & 4.784              \\
+$m_f$        & 0.342          & 0.3341  & 2.365        \\
+     \bottomrule[2pt]
+\end{tabular}
+\caption{Resultats problema 2.4}
+\end{table}
+\subsection{Verificació motor real}
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule[3pt]
+\textbf{Paràmetre}&\textbf{Valor}\\
+\midrule[1pt]
+$\eta_d$&	0.92\\
+
+$\pi_c$&	25\\
+
+$\pi_b$&0.97\\
+
+$T_{t4}$	&1700\\
+
+$\eta_c$&0.86\\
+
+$\eta_b$&0.98\\
+
+$\eta_n$&0.92\\
+\bottomrule[2pt]
+\end{tabular}
+\caption{Dades del problema 4.2}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule[3pt]
+Paràmetre & Guia problemes & Codi       & Error relatiu (\%) \\ \midrule[1pt]
+$\pi_r$ & 1.52    & 1.5243   & 0.282 \\
+$\pi_d$ & 0.92    & 0.92     & 0.000 \\
+$\pi_t$ & 0.273   & 0.2829   & 3.499 \\
+$\pi_n$& 0.92    & 0.92     & 0.000 \\
+$\tau_r$& 1.128   & 1.128    & 0.000 \\
+$\tau_c$& 2.76    & 2.7541   & 0.214 \\
+$\tau_\lambda$& 6.93    & 6.9388   & 0.127 \\
+$\tau_t$& 0.75    & 0.7213   & 3.979 \\
+$P_{t0}$& 91200   & 91460    & 0.284 \\
+$P_{t2}$& 83900   & 84144    & 0.290 \\
+$P_{t3}$& 2098000 & 2103600  & 0.266 \\
+$P_{t4}$& 2034000 & 2040500  & 0.319 \\
+$P_{t5}$& 570000  & 577170   & 1.242 \\
+$P_{t9}$& 524400  & 531000   & 1.243 \\
+$T_{t0}$& 276.3   & 276.36   & 0.022 \\
+$T_{t2}$& 276.3   & 276.36   & 0.022 \\
+$T_{t3}$& 760     & 761.1098 & 0.146 \\
+$T_{t5}$& 1282    & 1226.3   & 4.542 \\
+$T_{t9}$ & 1282    & 1226.3   & 4.542
+ \\ \bottomrule[2pt]
+\end{tabular}
+\caption{Resultats problema 4.2}
+\end{table}
+	
+
+
+\subsection{Verificació mixer}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule[3pt]
+\textbf{Paràmetre}&\textbf{Valor}\\
+\midrule[1pt]
+$M_5$      & 1    \\
+$T_{t5}/T_0$ & 4.1  \\
+$P_{t5}/P_0$  & 4.2  \\
+$m_5/m_6$   & 0.72 \\
+$M_{13}$     & 0.39 \\
+$T_{13}/T_0$  & 1.51 \\
+$R_5$      & 287  \\
+$R_{13}$     & 287  \\
+$\gamma_5$ & 1.3  \\
+$\gamma_{13}$ & 1.4 \\
+
+\bottomrule[2pt]
+\end{tabular}
+\caption{Dades del problema 2.5}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule[3pt]
+Paràmetre & Guia problemes & Codi       & Error relatiu (\%) \\ \midrule[1pt]
+$C_{p13}$& 1004.5 & 1004.5 & 0.000 \\
+$C_{p5}$ & 1248.6 & 1243.7 & 0.394 \\
+$C_{p16}$ & 1176.6 & 1176.7 & 0.008 \\
+$\gamma_6 $& 1.32   & 1.3226 & 0.197 \\
+$M_6$     & 0.43   & 0.4275 & 0.585
+ \\ \bottomrule[2pt]
+\end{tabular}
+\caption{Resultats problema 2.5}
+\end{table}
+
+
+\subsection{Verificació turbopropeller}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule[3pt]
+\textbf{Dada}&\textbf{Valor}\\
+\midrule[1pt]
+$M_0$      & 0.5  \\
+altura (m)       & 6000 \\
+$\eta_{prop}$ & 0.95 \\
+$\tau_\lambda$& 7    \\
+$\pi_c$& 21.5\\
+\bottomrule[2pt]
+\end{tabular}
+\caption{Dades del problema 3.3}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule[3pt]
+Paràmetre & Guia problemes & Codi       & Error relatiu (\%) \\ \midrule[1pt]
+$T_{t0}$       & 261.6          & 261.6075   & 0.003              \\
+$T_{t2}$      & 261.6          & 261.6075   & 0.003              \\
+$T_{t3}$      & 628.54         & 628.5602   & 0.003              \\
+$T_{t4}$       & 1744.05        & 1744.1     & 0.003              \\
+$T_{t45}$     & 1377.8         & 1386.6     & 0.635              \\
+$T_{t5}$       & 704            & 708.7247   & 0.667              \\
+$T_{t9}$      & 704            & 708.7247   & 0.667              \\
+$P_{t0}$       & 55925          & 56132      & 0.369              \\
+$P_{t2}$      & 55925          & 56132      & 0.369              \\
+$P_{t3}$       & 1202000        & 1206800    & 0.398              \\
+$P_{t4}$       & 1202000        & 1206800    & 0.398              \\
+$P_{t45}$     & 526700         & 541050     & 2.652              \\
+$P_{t5}$      & 50560          & 51625      & 2.063              \\
+$P_{t9}$       & 50560          & 51625      & 2.063              \\
+$M_9$        & 0.32           & 0.3549     & 9.834              \\
+$C_c$        & 0              & 2.6645$10-06$ & 0.000              \\
+$C_{prop}$     & 256.9          & 256.7382   & 0.063              \\
+$C_{tot}$      & 256.9          & 256.7382   & 0.063              \\ \bottomrule[2pt]
+\end{tabular}
+\caption{Resultats problema 3.3}
+\end{table}
