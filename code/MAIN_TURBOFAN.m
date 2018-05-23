@@ -14,21 +14,33 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
-
+% Selector seccions
+isMixer = false;
+isAftBurner = true;
+isTurboProp = true;
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
-[P,TAU,T] = Fan( P,PI,gam,ETA,T,TAU );
-[PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA);
-[P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0 );
-[T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI);
-[T,TAU,PI,P ] = TurbinaBaixa(T,alpha,CP,f,ETA,gam,P,PI,TAU);
-
+if isTurboProp
+    %exercici 33 - es va següint pas a pas
+    [PI,P,TAU,T] = CompressorTP( PI,P,gam,T,TAU,ETA);
+    [P,f] = CambraCombustioTP( PI,P,CP,TAU,gam,ETA,h,T0,T );
+    [T,TAU,PI,P] = TurbinaAltaTP( T,CP,ETA,f,gam,TAU,P,PI);
+    [T,TAU,PI,P ] = TurbinaBaixaTP(T,alpha,CP,f,ETA,gam,P,PI,TAU, T0);
+    [ T,P,M9 ] = ToveraTP( P0,T,PI,gam,P,TAU );
+    [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
+%     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,0);
+    
+else
+    [P,TAU,T] = Fan( P,PI,gam,ETA,T,TAU );
+    [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA);
+    [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0 );
+    [T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI);
+    [T,TAU,PI,P ] = TurbinaBaixa(T,alpha,CP,f,ETA,gam,P,PI,TAU);
+end
 %%
-isMixer=false;
-isAftBurner=true;
 %Punts d'entrada a mixer: 1.3 i 5. Punt a la sortida del mixer: 6
-if isMixer == true
+if isMixer
     %COMPUTE THE MIXER
     %[ T,P,M6,gam,CP] = mixer(T,P,CP,gam,R,alpha,f);
     [ T, P, M6A, gam, CP] = mixer2(T,P, CP,gam,R, alpha,f, T0, PI, TAU);
@@ -47,14 +59,18 @@ else
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
     Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     %Afegir afterburner
-    if isAftBurner == true      
+    if isAftBurner      
         [ P,f_AB, fab, Fadim_prim_AB, T] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9, M0, P0);
         f = f + f_AB;
         %Empenta adimensional total
         Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
-    else
     end
 end
+%Cas TurboProp
+if isTurboProp
+    
+end
+
 [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
 %Calcul Arees:
 M5=1;
