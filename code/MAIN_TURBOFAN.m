@@ -11,11 +11,7 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
 isMixer = false; % si esta en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
-<<<<<<< HEAD
 isTurboProp = true; % si esta en true col·loca un turboprop
-=======
-isTurboProp = false; % si esta en true col·loca un turboprop
->>>>>>> b6c39fdae1b3c6711d699ae59b68eeb4e69f77e5
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
