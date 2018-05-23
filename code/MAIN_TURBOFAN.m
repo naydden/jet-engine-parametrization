@@ -16,8 +16,8 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
     PI.f, PI.c,alpha);
 % Selector seccions
 isMixer = false; % si està en true col·loca el mixer
-isAftBurner = false; % si esta en true calcula l'after burner
-isTurboProp = true; % si esta en true col·loca un turboprop
+isAftBurner = true; % si esta en true calcula l'after burner
+isTurboProp = false; % si esta en true col·loca un turboprop
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
@@ -50,13 +50,13 @@ if isMixer
     TAU.b=tau2pi(PI.b,gam.mixer);
     TAU.n=tau2pi(PI.n,gam.mixer);
     [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
-    Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0);
+    Fadim = Fadimensional( f,M9,M9,alpha,T,P,gam,isMixer,T0,M0,P0,isAftBurner);
 elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     P.t6=P.t5;
     T.t6=T.t5;
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);
-    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
+    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
     [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
 else %Tovera sense turboporp ni mixer
     P.t6=P.t5;
@@ -65,9 +65,9 @@ else %Tovera sense turboporp ni mixer
     TAU.n=tau2pi(PI.n,gam.hot);
     P.t16=P.t13;
     T.t16=T.t13;
-    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA);
+    [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
-    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
+    Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0,isAftBurner);
     end
     
     
@@ -76,8 +76,9 @@ else %Tovera sense turboporp ni mixer
     if isAftBurner
         [ P,f_AB, fab, Fadim_prim_AB, T] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, T,f, M9, M0, P0);
         f = f + f_AB;
+        [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
         %Empenta adimensional total
-        Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
+        Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0,isAftBurner);
     end
 if ~isTurboProp
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);

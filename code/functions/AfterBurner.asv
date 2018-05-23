@@ -5,7 +5,7 @@ function [ P,f_AB, fab, Fadim_AB, T] = AfterBurner( PI,P,CP,TAU,gam,ETA,h,T0,R, 
 T.t9 = T.t7; %T.t7 es definida a 2400K
 P.t9 = PI.n*P.t6; %A pressió constant
 
-T.s9 = T.t9/(1+(gam.AB-1)/2*M9^2);
+%T.s9 = T.t9/(1+(gam.AB-1)/2*M9^2);
 TAU.AB = T.t7/T0;
 fab = CP.AB*T0/h*1/ETA.AB*(TAU.AB-TAU.t*TAU.lamb);
 %f=(CP.hot*TAU.gam-CP.cold*TAU.r*TAU.d*TAU.cH*TAU.f)/((ETA.b*h/T0)-CP.hot*TAU.gam);

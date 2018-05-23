@@ -1,11 +1,11 @@
-%% PAR�METRES GENERALS DONATS
+%% PARAMETRES GENERALS DONATS
 %Thrusts
 F=25000; %N
 
 %Velocitat
 v0 = 600/3.6; %[m/s] 600
 
-%C�mara combusti�
+%Camara combustio
 T.t4=1780;
 h=43e6; 
 
@@ -57,7 +57,7 @@ PI.r=tau2pi(TAU.r,gam.cold);
 gam.AB = gam.hot;
 CP.AB = CP.hot;
 T.t7 = 2400; %K
-ETA.AB = 0.98;
+ETA.AB = 0.99; %Mateix rendiment que la CC
 
 %% TurboProp
-ETA.prop = 0.7;
+ETA.prop = 0.7; %Rendiment turboprop
