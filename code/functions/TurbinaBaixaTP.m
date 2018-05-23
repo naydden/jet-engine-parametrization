@@ -6,5 +6,7 @@ PI.tL=tau2pi(TAU.tL,gam.hot);
 % P.t5=P.t45*PI.tL;
 PI.t=PI.tL*PI.tH;
 TAU.t=TAU.tH*TAU.tL;
+T.t5 = TAU.tL*T.t45;
+
 end
 

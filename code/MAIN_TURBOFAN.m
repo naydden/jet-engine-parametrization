@@ -15,9 +15,9 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
 % Selector seccions
-isMixer = false;
-isAftBurner = true;
-isTurboProp = true;
+isMixer = false; % si està en true col·loca el mixer
+isAftBurner = false; % si esta en true calcula l'after burner
+isTurboProp = true; % si esta en true col·loca un turboprop
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
@@ -29,7 +29,6 @@ if isTurboProp
     [T,TAU,PI,P ] = TurbinaBaixaTP(T,alpha,CP,f,ETA,gam,P,PI,TAU, T0);
     [ T,P,M9 ] = ToveraTP( P0,T,PI,gam,P,TAU );
     [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
-%     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,0);
     
 else
     [P,TAU,T] = Fan( P,PI,gam,ETA,T,TAU );
@@ -66,16 +65,18 @@ else
         Fadim_AB = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0);
     end
 end
-%Cas TurboProp
+
 if isTurboProp
-    
+else
+    [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
+    %Calcul Arees:
+    M5=1;
+    m5=m0+mf;
+    A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
 end
 
-[ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
-%Calcul Arees:
-M5=1;
-m5=m0+mf;
-A.e5 = Area(M5,gam.hot,P.t5,T.t5,R.hot,m5);
+
+
 
 
 
