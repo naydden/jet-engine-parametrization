@@ -1,8 +1,6 @@
 clc; clear; close all;
 %% TURBOFAN PARAMETRIC CALCULATION
-%{
-20/05/2018
-%}
+%{ 20/05/2018: Pol Fontanes, Eva Maria Urbano Gonzalez i Boyan Naydenov%}
 %% INPUT - carregar parï¿½metres generals
 %Add to path functions folder
 addpath(genpath('./functions'))
@@ -10,20 +8,20 @@ addpath(genpath('./functions'))
 NAME_INPUT_DATA = 'DATA' ; %Fitxer amb dades generals donades
 % Load data files
 eval(NAME_INPUT_DATA); %Carregar el codi
+%% Selector seccions - INPUT
+isMixer = false; % si esta en true colÂ·loca el mixer
+isAftBurner = false; % si esta en true calcula l'after burner
+isTurboProp = false; % si esta en true colÂ·loca un turboprop
+isTP = true;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
-% Selector seccions
-isMixer = false; % si està en true col·loca el mixer
-isAftBurner = false; % si esta en true calcula l'after burner
-isTurboProp = false; % si esta en true col·loca un turboprop
-isTP = true;
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
 if isTurboProp
-    %exercici 33 - es va següint pas a pas
+    %exercici 33 - es va seguint pas a pas
     [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA,isTurboProp);
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,isTurboProp );
     [T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI);
@@ -94,7 +92,7 @@ if ~isTurboProp
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
     
     %Calcul Arees
-    %Fluxos másics:
+    %Fluxos masics:
     m5=m0+mf;
     msortida=m0+mf+msec;
     mentrada=m0+msec;
@@ -109,9 +107,3 @@ if ~isTurboProp
     end
     
 end
-
-
-
-
-
-
