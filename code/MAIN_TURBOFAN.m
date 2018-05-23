@@ -69,7 +69,8 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
     Tcore = C.cin*CP.hot*T0/v0; %Tcore/m0
     Tprop = C.prop*CP.hot*T0/v0; %Tprop/m0
-    
+elseif isTP
+
 else %Tovera sense turboporp ni mixer
     P.t6=P.t5;
     T.t6=T.t5;
@@ -102,7 +103,7 @@ if isAftBurner
     
 end
 
-if ~isTurboProp
+if ~isTurboProp && ~isTP
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim,F,a0,alpha);
     
     %Calcul Arees
