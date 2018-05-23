@@ -57,4 +57,7 @@ T.t7 = 2400; %K
 ETA.AB = 0.99; %Mateix rendiment que la CC
 
 %% TurboProp
-ETA.prop = 0.7; %Rendiment turboprop
+ETA.prop = 0.89; %Rendiment turboprop
+ETA.g = 0.99;
+ETA.mL= 0.99;
+

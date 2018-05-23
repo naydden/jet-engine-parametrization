@@ -17,8 +17,8 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
 % Selector seccions
 isMixer = false; % si està en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
-isTurboProp = false; % si esta en true col·loca un turboprop
-isTP = true;
+isTurboProp = true; % si esta en true col·loca un turboprop
+isTP = t;
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
@@ -59,8 +59,8 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     TAU.b=tau2pi(PI.b,gam.hot);
     TAU.n=tau2pi(PI.n,gam.hot);
     [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
-    [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
-%     [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h,CP, isTP );
+    %[C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
+    [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h,CP );
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
     Tcore = C.cin*CP.hot*T0/v0; %Tcore/m0
     Tprop = C.prop*CP.hot*T0/v0; %Tprop/m0
@@ -75,15 +75,12 @@ else %Tovera sense turboporp ni mixer
     [ T,P,M9,PI,TAU ] = ToveraPrimari( P0,T,PI,gam,P,TAU,isMixer,isTurboProp,ETA,isAftBurner);
     [ T,P,M19] = Toverasecundari( T,PI,P,P0,gam,TAU );
     Fadim = Fadimensional( f,M9,M19,alpha,T,P,gam,isMixer,T0,M0,P0,isAftBurner);
-    if isTP %afegir una propeller 
-        [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
-%         [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h, CP, isTP );
+    if isTP
+        %[C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
+        [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h, CP );
         Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
         Tcore = C.cin*CP.hot*T0/v0; %Tcore/m0
         Tprop = C.prop*CP.hot*T0/v0; %Tprop/m0
-        J = 0.76;
-        n = 4000/60; %rev/s
-        D = calcPropeller(ETA, J, v0, n);
     end
 end
 %Afegir afterburner
