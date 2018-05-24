@@ -14,11 +14,7 @@ isAftBurner = false; % si esta en true calcula l'after burner
 isTurboProp = false; % si esta en true col·loca un turboprop
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
-<<<<<<< HEAD
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
-=======
-[ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU);
->>>>>>> acb9341034e193ba126b6cac439b8bb8238bf5aa
 
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
