@@ -9,12 +9,12 @@ NAME_INPUT_DATA = 'DATA' ; %Fitxer amb dades generals donades
 % Load data files
 eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
-isMixer = true; % si esta en true col·loca el mixer
+isMixer = false; % si esta en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
 isTurboProp = false; % si esta en true col·loca un turboprop
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
-[ PI, alpha ] = c M0, a0, gam, gc, PI, TAU );
+[ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
 
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
@@ -128,5 +128,6 @@ if ~isTurboProp && ~isTP
     else
         A.e9 = Area(M9,gam.hot,P.t9,T.t9,R.hot,m5);
         A.e19 = Area(M19,gam.cold,P.t19,T.t19,R.cold,msec);
-    end   
+    end
+    
 end
