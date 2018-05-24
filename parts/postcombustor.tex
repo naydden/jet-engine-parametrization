@@ -1,3 +1,4 @@
+\clearpage
 \section{Càlcul i elecció de postcombustor}
 Com s'ha vist amb anterioritat, el mixer pe'ls nostres paràmetres donava problemes a l'implementar-lo. Així doncs, es decideix calcular un postcombustor que només vagi adherit al core del turbofan, creant la postcombustió del flux primari.
 
@@ -27,7 +28,7 @@ Per calcular el postcombustor, s'ha seguit la referencia dels problemes solucion
 
 \noindent Es comença, solucionant el cas del turbofan real com en els apartats anteriors, fins obtenir els valors dels seus paràmetres a les toveres.
 
-\noindent Després, comença el càlcul del postcombustor, situat al final de la turbina. Es considera que $T_{t9} = T_{t7}$, $P_{t9}=\pi_nP_{t6}$ i es definieix $\tau_{\lambda AB} = \frac{Cp_{AB}T_{t7}}{Cp_cT_0}$.
+\noindent Després, comença el càlcul del postcombustor, situat al final de la turbina. Es considera que $T_{t9} = T_{t7}$, $P_{t9}=\pi_nP_{t6}$ i es defineix $\tau_{\lambda AB} = \frac{Cp_{AB}T_{t7}}{Cp_cT_0}$.
 
 \noindent Aleshores, es calcula la fracció de massa de combustible ($f_{AB}=\dot{m}_{fAB}/\dot{m}_0$) que el postcombustor afegeix al flux primari.
 
@@ -36,11 +37,26 @@ Per calcular el postcombustor, s'ha seguit la referencia dels problemes solucion
 \end{equation}
  
  
-\noindent Finalment, les seccions situades després del postcombustor són recalculades ja que els paràmetres d'qeuest les modifica.
-
-
-
-PROCÉS ESPECÍFIC Càlcul
+\noindent Finalment, les seccions situades després del postcombustor són recalculades, ja que, els paràmetres de sortida del postcombustor les modifica. Concretament s'imposa que $f = f +f_{AB}$ dins el codi per poder aplicar la funció de càlcul de la força adimensional (\textit{Fadimensional.m}). S'acaba el càlcul de l'afterburner extraient els cabals màssics característics del motor amb afterburner (\textit{Fluxosmasics.m}).
 
 \subsubsection{Resultats postcombustor}
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\toprule[3pt]
+		\textbf{Paràmetre}&\textbf{Valor amb AB}&\textbf{Valor sense AB}\\
+		\midrule[1pt]
+		$\hat{F}$ & $1.3$ & $1.3$\\
+		$ \dot{m}_0$ & $Cp_c$ & $1.3$\\
+		$T_{t7}$ & $2400K$ & $1.3$\\
+		$\eta_{AB}$ & $0.99$ & $1.3$\\
+		
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{ABres}
+	\caption{Resultats d'implementar el postcombustor.}
+\end{figure}
+
+
+\clearpage
 
