@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.11)  24 MAY 2018 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.11)  24 MAY 2018 21:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,17 +1273,17 @@ Package epstopdf Info: Source file: <./pics/alpha_pc_pf.eps>
 (epstopdf)                    size: 105738 bytes
 (epstopdf)             Command: <repstopdf --outfile=./pics/alpha_pc_pf-eps-con
 verted-to.pdf ./pics/alpha_pc_pf.eps>
-(epstopdf)             \includegraphics on input line 28.
+(epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
 <./pics/alpha_pc_pf-eps-converted-to.pdf, id=183, 421.575pt x 316.18124pt>
 File: ./pics/alpha_pc_pf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/alpha_pc_pf-eps-converted-to.pdf>
 Package pdftex.def Info: ./pics/alpha_pc_pf-eps-converted-to.pdf used on input 
-line 28.
+line 32.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
 
-Overfull \hbox (16.09851pt too wide) in paragraph at lines 28--29
+Overfull \hbox (16.09851pt too wide) in paragraph at lines 32--33
  [][] 
  []
 
@@ -1295,17 +1295,17 @@ Package epstopdf Info: Source file: <./pics/optimization.eps>
 (epstopdf)                    size: 58093 bytes
 (epstopdf)             Command: <repstopdf --outfile=./pics/optimization-eps-co
 nverted-to.pdf ./pics/optimization.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
 <./pics/optimization-eps-converted-to.pdf, id=185, 406.51875pt x 845.1575pt>
 File: ./pics/optimization-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/optimization-eps-converted-to.pdf>
 Package pdftex.def Info: ./pics/optimization-eps-converted-to.pdf used on input
- line 52.
+ line 56.
 (pdftex.def)             Requested size: 243.91312pt x 507.09842pt.
 
-Overfull \hbox (7.06468pt too wide) in paragraph at lines 52--53
+Overfull \hbox (7.06468pt too wide) in paragraph at lines 56--57
  [][] 
  []
 
@@ -1313,10 +1313,10 @@ Overfull \hbox (7.06468pt too wide) in paragraph at lines 52--53
 df>]
 
 Package multicol Warning: I moved some lines to the next page.
-(multicol)                Footnotes on page 5 might be wrong on input line 67.
+(multicol)                Footnotes on page 5 might be wrong on input line 70.
 
 [5 <./pics/optimization-eps-converted-to.pdf>]
-Overfull \hbox (22.8043pt too wide) in paragraph at lines 73--88
+Overfull \hbox (22.8043pt too wide) in paragraph at lines 77--92
  [][] 
  []
 
@@ -1346,7 +1346,7 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `diag_helix' on page 8 undefined on input line 83.
 
-<./pics/diag_helix.png, id=236, 544.434pt x 401.0985pt>
+<./pics/diag_helix.png, id=237, 544.434pt x 401.0985pt>
 File: ./pics/diag_helix.png Graphic file (type png)
 
 <use ./pics/diag_helix.png>
@@ -1382,7 +1382,7 @@ d-to.pdf ./pics/sample.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/sample-eps-converted-to.pdf, id=254, 577.15625pt x 449.68pt>
+<./pics/sample-eps-converted-to.pdf, id=255, 577.15625pt x 449.68pt>
 File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/sample-eps-converted-to.pdf>
@@ -1437,8 +1437,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 13283 strings out of 493029
- 190399 string characters out of 6136234
+ 13284 strings out of 493029
+ 190411 string characters out of 6136234
  393490 words of memory out of 5000000
  16327 multiletter control sequences out of 15000+600000
  49271 words of font info for 107 fonts, out of 8000000 for 9000
@@ -1466,10 +1466,10 @@ texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf
 type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
 elvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 o8a.pfb>
-Output written on main.pdf (18 pages, 719088 bytes).
+Output written on main.pdf (18 pages, 720217 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
- 165 named destinations out of 1000 (max. 500000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 166 named destinations out of 1000 (max. 500000)
  228 words of extra memory for PDF output out of 10000 (max. 10000000)
 
