@@ -34,8 +34,6 @@ while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc
         pf = pf_i(j-1);
         TAU.f(i) = pi2tau(pf, gam.cold);
         alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
-        
-        M9=sqrt((2/(gam.hot-1))*((TAU.n*TAU.t*TAU.b*TAU)-1));
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
         if (Fadim(i)-Fadim_anterior)/Fadim(i) < 0.0001
             pc_opt = pc; %optimum found
