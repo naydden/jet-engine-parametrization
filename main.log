@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 22:53
 entering extended mode
 **./main.tex
 (main.tex
@@ -1380,14 +1380,12 @@ Overfull \hbox (22.75677pt too wide) in paragraph at lines 46--61
 
 [10
 
-] [11]) (parts/consum.tex) (parts/dimensionat.tex
+]) (parts/consum.tex) (parts/dimensionat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\OT1/phv/b/n/17.28 C[]alcul de di-men-si-o-nat
  []
 
-) (parts/conclusions.tex) [12
-
-] (parts/sample.tex
+) (parts/conclusions.tex) [11] (parts/sample.tex
 Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)                    date: 2018-05-24 00:42:28
 (epstopdf)                    size: 106188 bytes
@@ -1399,7 +1397,7 @@ Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/sample-eps-converted-to.pdf, id=269, 577.15625pt x 449.68pt>
+<./pics/sample-eps-converted-to.pdf, id=264, 577.15625pt x 449.68pt>
 File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/sample-eps-converted-to.pdf>
@@ -1413,7 +1411,7 @@ Overfull \hbox (282.58739pt too wide) in paragraph at lines 5--6
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 19.
-(code/sample.m [13 <./pics/sample-eps-converted-to.pdf>]
+(code/sample.m [12 <./pics/sample-eps-converted-to.pdf>]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 61.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
@@ -1434,11 +1432,11 @@ Overfull \hbox (32.22577pt too wide) in paragraph at lines 78--79
 ][][][][][][][][][]  
  []
 
-)) [14] (main.bbl) [15] (parts/anexo1.tex [16
+)) [13] (main.bbl) [14] (parts/anexo1.tex [15
 
-] [17] [18])
+] [16] [17])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
- [19]
+ [18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
@@ -1455,8 +1453,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 13326 strings out of 493333
- 190645 string characters out of 3139194
+ 13325 strings out of 493333
+ 190638 string characters out of 3139194
  394693 words of memory out of 3000000
  16352 multiletter control sequences out of 15000+200000
  49271 words of font info for 107 fonts, out of 3000000 for 9000
@@ -1484,9 +1482,9 @@ ourier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (20 pages, 784800 bytes).
+Output written on main.pdf (19 pages, 784164 bytes).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 171 named destinations out of 1000 (max. 500000)
+ 499 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
  228 words of extra memory for PDF output out of 10000 (max. 10000000)
 
