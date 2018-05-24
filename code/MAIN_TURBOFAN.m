@@ -1,7 +1,7 @@
 clc; clear; close all;
 %% TURBOFAN PARAMETRIC CALCULATION
 %{ 20/05/2018: Pol Fontanes, Eva Maria Urbano Gonzalez i Boyan Naydenov%}
-%% INPUT - carregar par�metres generals
+%% INPUT - carregar parametres generals
 %Add to path functions folder
 addpath(genpath('./functions'))
 % Define input data files

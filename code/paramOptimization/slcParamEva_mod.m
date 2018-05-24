@@ -77,7 +77,7 @@ TOL_pc = 0.2;% Maximum diff_pf value acceptable
    Iteration stops when differnece between iterations of pc_opt and pf_opt
    is less than tolerance accepted.
 %}
-while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc 
+while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc 
     i=1;
     Fadim_anterior = 0; %always 0 for tarting
     %look for pc_opt

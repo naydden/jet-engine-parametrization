@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.11)  24 MAY 2018 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.11)  24 MAY 2018 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1154,7 +1154,7 @@ LaTeX Info: Redefining \nameref on input line 40.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<pics/logoESEIAAT.jpg, id=96, 571.38469pt x 99.37125pt>
+<pics/logoESEIAAT.jpg, id=100, 571.38469pt x 99.37125pt>
 File: pics/logoESEIAAT.jpg Graphic file (type jpg)
 
 <use pics/logoESEIAAT.jpg>
@@ -1172,12 +1172,12 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
  (./main.toc
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+LaTeX Font Info:    Try loading font information for U+msa on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1194,7 +1194,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ge.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5 ... - motor real\relax }}{6}{figure.caption.9}
+l.3 ...c$ i $\pi _f$\relax }}{4}{figure.caption.6}
                                                    [1])
 \tf@lof=\write6
 \openout6 = `main.lof'.
@@ -1216,7 +1216,7 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 
 LaTeX Warning: Reference `operacio' on page 3 undefined on input line 20.
 
-<./pics/seleccio.JPG, id=163, 444.91219pt x 205.5178pt>
+<./pics/seleccio.JPG, id=170, 444.91219pt x 205.5178pt>
 File: ./pics/seleccio.JPG Graphic file (type jpg)
 
 <use ./pics/seleccio.JPG>
@@ -1233,14 +1233,6 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 24.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 24.
-
-LaTeX Warning: Citation `mattingly' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `mattingly' on page 3 undefined on input line 24.
-
 ) (./parts/parametric.tex
 
 Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
@@ -1259,22 +1251,19 @@ Package epstopdf Info: Source file: <./pics/F_pc_pf.eps>
 (epstopdf)                    size: 104543 bytes
 (epstopdf)             Command: <repstopdf --outfile=./pics/F_pc_pf-eps-convert
 ed-to.pdf ./pics/F_pc_pf.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 19.
 Package epstopdf Info: Output file is already uptodate.
- <./pics/F_pc_pf-eps-converted-to.pdf, id=171, 421.575pt x 316.18124pt>
+ <./pics/F_pc_pf-eps-converted-to.pdf, id=181, 421.575pt x 316.18124pt>
 File: ./pics/F_pc_pf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/F_pc_pf-eps-converted-to.pdf>
 Package pdftex.def Info: ./pics/F_pc_pf-eps-converted-to.pdf used on input line
- 18.
+ 19.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
 
-Overfull \hbox (16.09851pt too wide) in paragraph at lines 18--19
+Overfull \hbox (16.09851pt too wide) in paragraph at lines 19--20
  [][] 
  []
-
-
-LaTeX Warning: Citation `mattingly' on page 4 undefined on input line 21.
 
 Package epstopdf Info: Source file: <./pics/alpha_pc_pf.eps>
 (epstopdf)                    date: 2018-05-24 07:32:12
@@ -1284,33 +1273,57 @@ Package epstopdf Info: Source file: <./pics/alpha_pc_pf.eps>
 (epstopdf)                    size: 105738 bytes
 (epstopdf)             Command: <repstopdf --outfile=./pics/alpha_pc_pf-eps-con
 verted-to.pdf ./pics/alpha_pc_pf.eps>
-(epstopdf)             \includegraphics on input line 27.
+(epstopdf)             \includegraphics on input line 28.
 Package epstopdf Info: Output file is already uptodate.
-<./pics/alpha_pc_pf-eps-converted-to.pdf, id=172, 421.575pt x 316.18124pt>
+<./pics/alpha_pc_pf-eps-converted-to.pdf, id=183, 421.575pt x 316.18124pt>
 File: ./pics/alpha_pc_pf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/alpha_pc_pf-eps-converted-to.pdf>
 Package pdftex.def Info: ./pics/alpha_pc_pf-eps-converted-to.pdf used on input 
-line 27.
+line 28.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
 
-Overfull \hbox (16.09851pt too wide) in paragraph at lines 27--28
+Overfull \hbox (16.09851pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <./pics/optimization.eps>
+(epstopdf)                    date: 2018-05-24 20:27:20
+(epstopdf)                    size: 221451 bytes
+(epstopdf)             Output file: <./pics/optimization-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-24 20:28:26
+(epstopdf)                    size: 58093 bytes
+(epstopdf)             Command: <repstopdf --outfile=./pics/optimization-eps-co
+nverted-to.pdf ./pics/optimization.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+<./pics/optimization-eps-converted-to.pdf, id=185, 406.51875pt x 845.1575pt>
+File: ./pics/optimization-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./pics/optimization-eps-converted-to.pdf>
+Package pdftex.def Info: ./pics/optimization-eps-converted-to.pdf used on input
+ line 52.
+(pdftex.def)             Requested size: 243.91312pt x 507.09842pt.
+
+Overfull \hbox (7.06468pt too wide) in paragraph at lines 52--53
  [][] 
  []
 
 [4 <./pics/F_pc_pf-eps-converted-to.pdf> <./pics/alpha_pc_pf-eps-converted-to.p
 df>]
-Overfull \hbox (22.8043pt too wide) in paragraph at lines 68--83
+
+Package multicol Warning: I moved some lines to the next page.
+(multicol)                Footnotes on page 5 might be wrong on input line 67.
+
+[5 <./pics/optimization-eps-converted-to.pdf>]
+Overfull \hbox (22.8043pt too wide) in paragraph at lines 73--88
  [][] 
  []
 
-[5]) (./parts/fan.tex
-
-LaTeX Warning: Citation `mattingly' on page 6 undefined on input line 4.
-
+) (./parts/mixer.tex) (./parts/fan.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 5.
-
+ [6]
 Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
@@ -1320,19 +1333,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
 
-[6]
+
 Overfull \hbox (117.49095pt too wide) in paragraph at lines 35--35
 [] 
  []
 
+[7]
 
-Package caption Warning: \label without proper reference on input line 89.
+Package caption Warning: \label without proper reference on input line 88.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `diag_helix' on page 7 undefined on input line 83.
+LaTeX Warning: Reference `diag_helix' on page 8 undefined on input line 83.
 
-[7] <./pics/diag_helix.png, id=220, 544.434pt x 401.0985pt>
+<./pics/diag_helix.png, id=236, 544.434pt x 401.0985pt>
 File: ./pics/diag_helix.png Graphic file (type png)
 
 <use ./pics/diag_helix.png>
@@ -1348,16 +1362,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-[8 <./pics/diag_helix.png>]) (./parts/postcombustor.tex
-
-LaTeX Warning: Citation `mattingly' on page 9 undefined on input line 10.
-
-) (./parts/consum.tex) (./parts/dimensionat.tex
+[8 <./pics/diag_helix.png>] [9]) (./parts/postcombustor.tex)
+(./parts/consum.tex) (./parts/dimensionat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\OT1/phv/b/n/17.28 C[]alcul de di-men-si-o-nat
  []
 
-) (./parts/conclusions.tex) [9
+) (./parts/conclusions.tex) [10
 
 ] (./parts/sample.tex
 Package epstopdf Info: Source file: <./pics/sample.eps>
@@ -1371,7 +1382,7 @@ d-to.pdf ./pics/sample.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/sample-eps-converted-to.pdf, id=233, 577.15625pt x 449.68pt>
+<./pics/sample-eps-converted-to.pdf, id=254, 577.15625pt x 449.68pt>
 File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/sample-eps-converted-to.pdf>
@@ -1385,7 +1396,7 @@ Overfull \hbox (282.58739pt too wide) in paragraph at lines 5--6
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 19.
-(./code/sample.m [10 <./pics/sample-eps-converted-to.pdf>]
+(./code/sample.m [11 <./pics/sample-eps-converted-to.pdf>]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
@@ -1406,36 +1417,33 @@ Overfull \hbox (32.22577pt too wide) in paragraph at lines 78--79
 ][][][][][][][][][]  
  []
 
-)) [11]
-No file main.bbl.
-(./parts/anexo1.tex [12
+)) [12] (./main.bbl) [13] (./parts/anexo1.tex [14
 
-] [13] [14])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+] [15] [16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 054B6FF9F72325AFFA7B492B8C56AFC3;1777.
-
+(rerunfilecheck)             Checksum: ED56FFC93C79EC723E21B5D34A42CC18;1846.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 13267 strings out of 493029
- 190099 string characters out of 6136234
- 393382 words of memory out of 5000000
- 16323 multiletter control sequences out of 15000+600000
- 49807 words of font info for 108 fonts, out of 8000000 for 9000
+ 13283 strings out of 493029
+ 190399 string characters out of 6136234
+ 393490 words of memory out of 5000000
+ 16327 multiletter control sequences out of 15000+600000
+ 49271 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,81p,896b,2123s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,81p,896b,2125s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1458,10 +1466,10 @@ texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf
 type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
 elvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 o8a.pfb>
-Output written on main.pdf (16 pages, 661193 bytes).
+Output written on main.pdf (18 pages, 719088 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 408 compressed objects within 5 object streams
- 159 named destinations out of 1000 (max. 500000)
- 215 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 165 named destinations out of 1000 (max. 500000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 

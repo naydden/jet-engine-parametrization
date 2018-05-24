@@ -3,22 +3,23 @@
 \contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{3}{section.2}
 \contentsline {section}{\numberline {3}Elecci\IeC {\'o} de les condicions de disseny per un motor \IeC {\`o}ptim}{4}{section.3}
 \contentsline {section}{\numberline {4}C\IeC {\`a}lcul param\IeC {\`e}tric del motor real}{5}{section.4}
-\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{6}{section.5}
-\contentsline {subsection}{\numberline {5.1}Par\IeC {\`a}metres suposats}{6}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}C\IeC {\`a}lcul del turboprop amb optimitzaci\IeC {\'o} de la pot\IeC {\`e}ncia de la turbina de baixa pressi\IeC {\'o}}{6}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}C\IeC {\`a}lcul del turboprop substituint el fan per una h\IeC {\`e}lix}{7}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Conclusions sobre el turboprop}{7}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Elecci\IeC {\'o} de l'h\IeC {\`e}lix}{8}{subsection.5.5}
-\contentsline {section}{\numberline {6}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{9}{section.6}
-\contentsline {subsection}{\numberline {6.1}Par\IeC {\`a}metres suposats }{9}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Posctombustor adherit al flux primari}{9}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Resultats postcombustor}{9}{subsubsection.6.2.1}
-\contentsline {section}{\numberline {7}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{9}{section.7}
-\contentsline {section}{\numberline {8}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{9}{section.8}
-\contentsline {section}{\numberline {9}Conclusions}{9}{section.9}
-\contentsline {section}{\numberline {10}Sample Section}{10}{section.10}
-\contentsline {section}{\numberline {A}Annex: Verificaci\IeC {\'o} del codi}{12}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Verificaci\IeC {\'o} turbofan}{12}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{13}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{14}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{15}{subsection.A.4}
+\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i Elecci\IeC {\'o} del Mixer}{6}{section.5}
+\contentsline {section}{\numberline {6}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{6}{section.6}
+\contentsline {subsection}{\numberline {6.1}Par\IeC {\`a}metres suposats}{6}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}C\IeC {\`a}lcul del turboprop amb optimitzaci\IeC {\'o} de la pot\IeC {\`e}ncia de la turbina de baixa pressi\IeC {\'o}}{6}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}C\IeC {\`a}lcul del turboprop substituint el fan per una h\IeC {\`e}lix}{7}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Conclusions sobre el turboprop}{8}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Elecci\IeC {\'o} de l'h\IeC {\`e}lix}{8}{subsection.6.5}
+\contentsline {section}{\numberline {7}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{10}{section.7}
+\contentsline {subsection}{\numberline {7.1}Par\IeC {\`a}metres suposats }{10}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Posctombustor adherit al flux primari}{10}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Resultats postcombustor}{10}{subsubsection.7.2.1}
+\contentsline {section}{\numberline {8}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{10}{section.8}
+\contentsline {section}{\numberline {9}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{10}{section.9}
+\contentsline {section}{\numberline {10}Conclusions}{10}{section.10}
+\contentsline {section}{\numberline {11}Sample Section}{11}{section.11}
+\contentsline {section}{\numberline {A}Annex: Verificaci\IeC {\'o} del codi}{14}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Verificaci\IeC {\'o} turbofan}{14}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{15}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{16}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{17}{subsection.A.4}

@@ -10,6 +10,7 @@ Es recorda que:
 \begin{equation*}
 	\alpha = \frac{m_{primari}}{m_{secundari}}
 \end{equation*}
+
 Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionats a l'enunciat. Aquest es troba integrat a la funció \textit{opt\_parametros.m} i es basa en dos criteris:
 \begin{itemize}
 \item Provar diferents combinacions de $\pi_f$ i $\pi_c$ per tal de trobar el punt on ja no valgui la pena continuar pujant-les, és a dir, allà on la força adimensional creixi poc amb la pujada dels paràmetres.
@@ -28,10 +29,6 @@ Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràme
 	\caption{$\alpha_{opt}$ en funció de $\pi_c$ i $\pi_f$}
 \end{figure}
 \end{itemize}
-Tot aquest el procés es pot veure molt clarament al següent diagrama:
-
-DIAGRMAMA PROCES OPIMITZACIO
-
 Finalment, els valors obtinguts són els següents:
 \begin{figure}[H]
 	\centering
@@ -48,6 +45,14 @@ Finalment, els valors obtinguts són els següents:
 	\caption{Selecció dels paràmetres de disseny}
 \end{figure}
 Aquests s´han comparat a valors típics vists a classe i a la bibliografia i s'ha conclòs que són uns valors raonables i realistes.
+
+Tot el procés es pot veure esquematitzat a la Figura \ref{opt}. Resumidament, s'ha anat variant $\pi_c$ o $\pi_f$ fins arribar a una convergència de valors que donés un increment significatiu de $\hat{F}$. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./pics/optimization}
+	\caption{Algoritme emprat per trobar els valors òptims}
+	\label{opt}
+\end{figure}
 \section{Càlcul paramètric del motor real}
 El següent pas consisteix a resoldre el turbofan sencer, sense tindre en compte \textit{mixer} o \textit{after-burner}, obtenint així la distribució de pressions i temperatures així com els diferents fluxos màssics. Bàsicament, es juga amb el diagrama T-S i amb les eficiències per tal d'aconseguir que el motor real es comporti com un d'ideal.
 
@@ -57,7 +62,7 @@ A continuació algunes consideracions rellevants per cada etapa \footnote{La I i
 \item \textbf{2t - 2.5t: Fan}. Com que la tasca primordial del fan es incrementar la pressió, es fixa la pressió que assoleix el compressor ideal i es dissenya el cas real per tal que assoleixi el mateix objectiu. Així, $P_{t25}^R = P_{t25}^I$ tot i que $T_{t25}^R \neq T_{t25}^I$ . Coneixent el rendiment $\eta_f$ es troben les noves temperatures.
 \item \textbf{2.5t - 3t: Compressor de baixa}. La mateixa explicació del fan és vàlida per al compressor de baixa doncs es dissenya amb el mateix criteri.
 \item \textbf{3t - 4t: Cambra de combustió}. En un cas ideal la combustió es produeix de forma isòbara mentre que al cas real la pressió no es del tot constant. Tot i així, es dissenya per tal d'arribar a la mateixa $T_{t4}$. El consum de combustible es troba igualant la calor generada per la crema a la calor proporcionada al fluid.
-\item \textbf{4t - 4.5t: Turbina d'alta}. De forma similar al cas del compressor, l'objectiu de la tovera real serà el d'aconseguir expandir el fluid igual que una ideal. Per aquest motiu s'imposa que $P_{t45}^R = P_{t45}^I$.  Per resoldre la turbina doncs, cal igualar treballs. Concretament: $\dot{W_{cH}^R} = \dot{W_{tH}^R} $. D'aquesta igualtat s'obté $\tau_{tH}^R$ que si ho combinem amb $\eta_{tH}$ s'obté $\tau_{tH}^I$ que permet trobar a al vegada $P_{tH}^{I} = P_{tH}^{R}$.
+\item \textbf{4t - 4.5t: Turbina d'alta}. De forma similar al cas del compressor, l'objectiu de la tovera real serà el d'aconseguir expandir el fluid igual que una ideal. Per aquest motiu s'imposa que $P_{t45}^R = P_{t45}^I$.  Per resoldre la turbina doncs, cal igualar treballs. Concretament: $\dot{W_{cH}^R} = \dot{W_{tH}^R} $. D'aquesta igualtat s'obté $\tau_{tH}^R$ que si es combina amb $\eta_{tH}$ s'obté $\tau_{tH}^I$ que permet trobar a al vegada $P_{tH}^{I} = P_{tH}^{R}$.
 \item \textbf{4.5t - 6t: Turbina de baixa}. La mateixa explicació de la turbina d'alta serveix per la de baixa, amb la diferència que ara el treball s'iguala al del fan.
 \item \textbf{6t - 9t: Tovera Primari}. Es considera adiabàtica i per tant, $\tau_n = 1$. Per altra banda, $\pi_n = \eta_n$. Per últim, per trobar els valors dinàmics a la sortida, es suposa que la tovera està adaptada ($P_9 = P_0$).
 \item \textbf{16t - 19t: Tovera Secundari}. Funciona exactament igual que la del primari però amb les condicions d'entrada canviades.
@@ -97,4 +102,4 @@ Pel que fa als fluxos màssics:
 	\label{C_opti2}
 	\caption{Fluxos màssics - motor real}
 \end{figure}
-Per aquesta configuració s'obtè una empenta adimensonal de $\bm{\hat{F} = 5.5}$.
+Per aquesta configuració s'obté una empenta adimensonal de $\bm{\hat{F} = 5.5}$.
