@@ -59,7 +59,7 @@ while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc
         pcf = pc_opt;
         TAU.c(i) = pi2tau(pcf, gam.cold);
         TAU.f(i) = pi2tau(pf, gam.cold);
-        alpha(i)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
+        alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
         if abs((Fadim(i)-Fadim_anterior)/Fadim(i)) < 0.05
             pf_opt = pf;

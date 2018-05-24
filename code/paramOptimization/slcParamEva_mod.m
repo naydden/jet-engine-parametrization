@@ -32,7 +32,7 @@ T.t0 = T0*(1+(gam.cold-1)/2*M0^2);
 P.t0=P0*(1+(gam.cold-1)/2*M0^2)^(gam.cold/(gam.cold-1));
 TAU.lamb = T.t4/T0;
 TAU.r = T.t0/T0;
-PI.r=pi2tau(TAU.r,gam.cold);
+PI.r=tau2pi(TAU.r,gam.cold);
 
 %% Considerem situaci� de Optimum Bypass ratio. Minimitza consum especific. (pag 370)
 inc_c=0.4; %Increment del valor de PI.c
@@ -85,7 +85,7 @@ while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc
         TAU.c(i) = pi2tau(pc, gam.cold);
         pf = pf_i(j-1);
         TAU.f(i) = pi2tau(pf, gam.cold);
-        alpha(i)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
+        alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
         if (Fadim(i)-Fadim_anterior)/Fadim(i) < 0.0001
             pc_opt = pc; %optimum found
