@@ -41,26 +41,28 @@ inc_f=0.1;
 max_f=6;
 PI.c = 1 : inc_c : max_c; %Vector amb els valors de PI.c
 PI.f= 1 : inc_f : max_f;
-% i=1;
-%C�lcul de alpha optima (pag 300 libro): 
-% for pc = PI.c
-%     TAU.c(i) = pi2tau(pc, gam.cold); 
-%     for pf=PI.f
-%        TAU.f(i) = pi2tau(pf, gam.cold);
-%        alpha(i,j)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
-%        Fadim(i,j)=a0/gc*(1+2*alpha(i,j))/(2*(1+alpha(i,j)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
-%         j = j + 1;
-%     end
-%     j = 1;
-%     i = i + 1;
-% end
-%% PLOTS
-% figure();
-% surf(PI.c,PI.f,Fadim');
-% xlabel('\pi_c'); ylabel('\pi_f'); zlabel('$$\hat{F}$$','Interpreter','Latex');
-% figure();
-% surf(PI.c,PI.f,alpha');
-% xlabel('\pi_c'); ylabel('\pi_f'); zlabel('\alpha');
+
+i=1;
+j = 1;
+% C�lcul de alpha optima (pag 300 libro): 
+for pc = PI.c
+    TAU.c(i) = pi2tau(pc, gam.cold); 
+    for pf=PI.f
+       TAU.f(i) = pi2tau(pf, gam.cold);
+       alpha(i,j)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
+       Fadim(i,j)=a0/gc*(1+2*alpha(i,j))/(2*(1+alpha(i,j)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
+        j = j + 1;
+    end
+    j = 1;
+    i = i + 1;
+end
+% PLOTS
+figure();
+surf(PI.c,PI.f,Fadim');
+xlabel('\pi_c'); ylabel('\pi_f'); zlabel('$$\hat{F}$$','Interpreter','Latex');
+figure();
+surf(PI.c,PI.f,alpha');
+xlabel('\pi_c'); ylabel('\pi_f'); zlabel('\alpha');
 %% pc_opt and pf_opt iteration (search optimum values)
 %initial values
 pf_i(1) = PI.f(end);
@@ -111,7 +113,7 @@ while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc
         pcf = pc_opt;
         TAU.c(i) = pi2tau(pcf, gam.cold);
         TAU.f(i) = pi2tau(pf, gam.cold);
-        alpha(i)=1/(TAU.r*TAU.f(i))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
+        alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
         if abs((Fadim(i)-Fadim_anterior)/Fadim(i)) < 0.05
             pf_opt = pf;
