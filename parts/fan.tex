@@ -70,10 +70,47 @@ En aquest cas, la idea es la següent. Un cop calculats els paràmetres del turb
 	\label{C_opti2}
 	\caption{Paràmetres C turboprop amb turbina de baixa pressió no optimitzada}
 \end{figure}
-\noindent En aquest cas, $C_{prop}\approx C_{cin}$. Tal i com calia esperar, el fet de no optimitzar $\tau_{tL}$, fa que el fluid s'expandeixi menys a la turbina de baixa pressió, fent que hi hagi menys potència disponible per l'hèlix.
+\noindent En aquest cas, $C_{prop}\approx C_{cin}$. Tal i com calia esperar, el fet de no optimitzar $\tau_{tL}$, fa que el fluid s'expandeixi menys ($\tau_{tL}$ major) a la turbina de baixa pressió, fent que hi hagi menys potència disponible per l'hèlix. Conseqüentment, la empenta mitjançant l'hèlix no representa més del 50\% de la total.
 
 \subsection{Conclusions sobre el turboprop}
-Donat que en cap dels dos casos s'aconsegueix extreure la suficient potencia del fluid per utilitzar l'hèlix del turboprop com a quasi-únic element de propulsió, no es recomana implementar el turboprop en vers del turbofan perquè amb les característiques calculades, es tractaria d'un turboprop poc eficient.
+Mitjançant l'anàlisi d'aquests tipus de motor, s'ha vist com d'important és optimitzar la turbina de baixa pressió.
+
+\noindent Ara bé, donat que en cap dels dos casos s'aconsegueix extreure la suficient potencia del fluid per utilitzar l'hèlix del turboprop com a quasi-únic element de propulsió, no es recomana implementar el turboprop en vers del turbofan perquè amb les característiques calculades, es tractaria d'un turboprop poc eficient.
+
+\subsection{Elecció de l'hèlix}
+Donat que no s'ha recomanat la implementació d'un turboprop per les raons anteriorment esmentades, no s'ha desenvolupat un algoritme molt complex per tal d'escollir l'hèlix pe'ls turboprops calculats. Una primera simplificació, ha sigut considerar l'hèlix de pas fixe i s'ha utilitzat el diagrama de la Figura \ref{diag_helix}, per determinar J a partir de $\eta_{prop}$ conegut.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{./pics/diag_helix}
+	\label{diag_helix}
+	\caption{Corba de rendiment d'una hèlix de pas fix.}
+\end{figure}
+
+\noindent S'han considerat els següents paràmetres de disseny:
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{lc}
+		\toprule[3pt]
+		\textbf{Paràmetre}&\textbf{Valor}\\
+		\midrule[1pt]
+		$\eta_{prop}$ & 0.81\\
+		$J$ & 0.76\\
+		$D$ & 2.6m\\
+		$v_0$&600km/h\\
+				
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{helix_param}
+	\caption{Paràmetres de disseny de l'hèlix.}
+\end{figure}
+Mitjançant l'expressió 
+\begin{align}
+	J = V/nD
+\end{align}
+obtenim que el motor turboprop ha de fer girar l'hèlix de $2.6m$ a \textbf{$n=84.35 rev/s$} o el que és el mateix \textbf{$n=5060rpm$}.
+
+
 
 
 \clearpage

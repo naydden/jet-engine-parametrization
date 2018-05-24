@@ -26,6 +26,9 @@ if isTurboProp %optimització de la turbina
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,isTurboProp );
     [T,TAU,PI,P] = TurbinaAlta( T,CP,ETA,f,gam,TAU,P,PI);
     [T,TAU,PI,P ] = TurbinaBaixa(T,alpha,CP,f,ETA,gam,P,PI,TAU,isTurboProp);
+    J = 0.76;
+    D = 2.6;
+    n = calcPropeller(ETA, J, v0, D);
 elseif isTP %afegir una propeller
     [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA,1);
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,1 );
