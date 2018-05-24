@@ -17,6 +17,7 @@
 \usepackage[linktocpage]{hyperref}
 \usepackage[bottom]{footmisc}
 \usepackage{float}
+\usepackage{multicol}
 \usepackage{bm}
 %\usepackage{cite}
 \usepackage{commath}
@@ -57,7 +58,7 @@
 \lstlistoflistings
 \listoffigures
 \pagebreak
-\twocolumn
+\begin{multicols}{2}
 \input{./parts/intro}
 \input{./parts/descripcio}
 \input{./parts/parametric}
@@ -73,7 +74,7 @@
 \input{./parts/conclusions}
 \newpage
 \input{./parts/sample}
-
+\end{multicols}
 
 
 \newpage
