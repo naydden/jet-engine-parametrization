@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 04:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 04:19
 entering extended mode
 **./main.tex
 (main.tex
@@ -1258,9 +1258,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
-[7
-
- <./pics/diag_helix.png>]) (parts/postcombustor.tex) (parts/consum.tex)
+[7 <./pics/diag_helix.png>]) (parts/postcombustor.tex) (parts/consum.tex)
 [8
 
 ] (parts/dimensionat.tex
@@ -1379,7 +1377,7 @@ Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/he
 lvetic/uhvro8a.pfb>
-Output written on main.pdf (14 pages, 472093 bytes).
+Output written on main.pdf (14 pages, 472180 bytes).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
