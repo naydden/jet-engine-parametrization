@@ -3,17 +3,21 @@
 \BOOKMARK [1][-]{section.3}{Elecci\363 de les condicions de disseny per optimitzaci\363}{}% 3
 \BOOKMARK [1][-]{section.4}{C\340lcul param\350tric del motor real}{}% 4
 \BOOKMARK [1][-]{section.5}{C\340lcul i elecci\363 de l'h\350lix}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{C\340lcul del turboprop amb optimitzaci\363 de la pot\350ncia de la turbina de baixa pressi\363}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{C\340lcul del turboprop substituint el fan per una h\350lix}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.3}{Conclusions sobre el turboprop}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.4}{Elecci\363 de l'h\350lix}{section.5}% 9
-\BOOKMARK [1][-]{section.6}{C\340lcul i elecci\363 de postcombustor}{}% 10
-\BOOKMARK [1][-]{section.7}{C\340lcul de consum d\220aire i fuel en vol}{}% 11
-\BOOKMARK [1][-]{section.8}{C\340lcul de dimensionat d\220\340rees}{}% 12
-\BOOKMARK [1][-]{section.9}{Conclusions}{}% 13
-\BOOKMARK [1][-]{section.10}{Sample Section}{}% 14
-\BOOKMARK [1][-]{appendix.A}{Annex: Verificaci\363 del codi}{}% 15
-\BOOKMARK [2][-]{subsection.A.1}{Verificaci\363 turbofan}{appendix.A}% 16
-\BOOKMARK [2][-]{subsection.A.2}{Verificaci\363 motor real}{appendix.A}% 17
-\BOOKMARK [2][-]{subsection.A.3}{Verificaci\363 mixer}{appendix.A}% 18
-\BOOKMARK [2][-]{subsection.A.4}{Verificaci\363 turbopropeller}{appendix.A}% 19
+\BOOKMARK [2][-]{subsection.5.1}{Par\340metres suposats}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{C\340lcul del turboprop amb optimitzaci\363 de la pot\350ncia de la turbina de baixa pressi\363}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.3}{C\340lcul del turboprop substituint el fan per una h\350lix}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.4}{Conclusions sobre el turboprop}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.5}{Elecci\363 de l'h\350lix}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{C\340lcul i elecci\363 de postcombustor}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Par\340metres suposats }{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Posctombustor adherit al flux primari}{section.6}% 13
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Resultats postcombustor}{subsection.6.2}% 14
+\BOOKMARK [1][-]{section.7}{C\340lcul de consum d\220aire i fuel en vol}{}% 15
+\BOOKMARK [1][-]{section.8}{C\340lcul de dimensionat d\220\340rees}{}% 16
+\BOOKMARK [1][-]{section.9}{Conclusions}{}% 17
+\BOOKMARK [1][-]{section.10}{Sample Section}{}% 18
+\BOOKMARK [1][-]{appendix.A}{Annex: Verificaci\363 del codi}{}% 19
+\BOOKMARK [2][-]{subsection.A.1}{Verificaci\363 turbofan}{appendix.A}% 20
+\BOOKMARK [2][-]{subsection.A.2}{Verificaci\363 motor real}{appendix.A}% 21
+\BOOKMARK [2][-]{subsection.A.3}{Verificaci\363 mixer}{appendix.A}% 22
+\BOOKMARK [2][-]{subsection.A.4}{Verificaci\363 turbopropeller}{appendix.A}% 23

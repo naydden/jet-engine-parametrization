@@ -1,2 +1,17 @@
 \section{Càlcul i elecció de postcombustor}
+Com s'ha vist amb anterioritat, el mixer pe'ls nostres paràmetres donava problemes a l'implementar-lo. Així doncs, es decideix calcular un postcombustor que només vagi adherit al core del turbofan, creant la postcombustió del flux primari.
+
+\subsection{Paràmetres suposats }
+Tot i que la gran majoria de paràmetres venien donats per l'enunciat del treball, amb l'objectiu de fer-lo més realista s'han suposat certes eficiències específiques del component estudiat.
+
+TAULA PARAMETRES
+
+\subsection{Posctombustor adherit al flux primari}
+Per calcular el postcombustor, s'ha seguit la referencia dels problemes solucionats per Pau Manent a l'assignatura i la referencia del llibre \cite{mattingly}.
+
+\noindent Es comença solucionant el cas del turbofan real, tal i com s'a implementat al codi, fins obtenir els valors dels seus paràmetres a les toveres. Després, s'aplica el càlcul del postcombustor, situat al final de la turbina. Finalment, les seccions situades després del postcombustor són recalculades ja que aquest actua sobre elles.
+
+PROCÉS ESPECÍFIC Càlcul
+
+\subsubsection{Resultats postcombustor}
 

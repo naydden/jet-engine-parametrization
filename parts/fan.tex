@@ -3,6 +3,9 @@
 Per escollir una hèlix, cal calcular el turboprop que la mourà. Aleshores, el turbofan dissenyat anteriorment, a nivell pràctic, se l'hi extraurà el fan per substituir-lo per una hèlix. En aquesta secció s'explicaran els dos mètodes implementats per escollir l'hèlix: el primer optimitzant la turbina de baixa pressió i el segon on només es canvia el fan per una hèlix sense optimització.
 
 \noindent Per a dur a terme aquests càlculs, s'han utilitzat els exercicis de turboprop solucionats per Pau Manent i les expressions del llibre \cite{mattingly}. A nivell d'implementació, s'han incorporat subrutines a dins de les funcions de càlcul del turbofan per tenir en compte els elements addicionals estudiats.
+\subsection{Paràmetres suposats}
+
+TAULA PARAMETRES
 
 \subsection{Càlcul del turboprop amb optimització de la potència de la turbina de baixa pressió}
 Es comença calculant el turbojet que alimenta l'hèlix, seguint els mateixos passos que en el turbofan. És a dir, des de el difusor a la tovera de sortida.
