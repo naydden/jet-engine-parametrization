@@ -1,8 +1,100 @@
-\section{Elecció de les condicions de disseny per optimització}
-Bàsicament s'han de triar $\pi_c$, $\pi_f$ i $\alpha$ per tal d'obtenir el millor motor possible donades les dades de l'enunciat.
+\section{Elecció de les condicions de disseny per un motor òptim}
+Donada l'alçada i la velocitat de vol, així com $T_{t4}$ les tres variables de disseny só	n $\pi_c$, $\pi_f$ i $\alpha$. Així doncs, aquests s'han d'escollir per tal d'obtenir el millor motor possible donades les dades de l'enunciat mostrades a l'apartat \ref{descripcio}.
 Es recorda que:
 \begin{equation*}
 	\pi_c = \frac{P_{3t}}{P_{2t}} = \pi_{f}\times\pi_{cL} = \frac{P_{2.5t}}{P_{2t}} \times \frac{P_{3t}}{P_{2.5t}}
 \end{equation*}
-Per fer la tria,  s'ha fet un extens estudi per tal de trobar els paràmetres adequats a aquestes condicions de vol. Aquest es troba integrat a la funció \textit{opt\_parametros.m} i consisteix en provar diferents combinacions de       $\pi_f$ i $\pi_c$ per tal de trobar el punt on ja no valgui la pena continuar pujant-les, és a dir, allà on la força adimensional creixi poc amb la pujada dels paràmetres. Com que es vol garantir el mínim consum específic per cada combinació  $\pi_f$ i $\pi_c$ de valors, es pot obtenir la $\alpha$ corresponent per complir aquest requisit. Tot el procés es pot veure molt clarament al següent diagrama:
+\begin{equation*}
+	\pi_f = \frac{P_{2.5t}}{P_{2t}} = \frac{P_{1.3t}}{P_{2t}} 
+\end{equation*}
+\begin{equation*}
+	\alpha = \frac{m_{primari}}{m_{secundari}}
+\end{equation*}
+Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionats a l'enunciat. Aquest es troba integrat a la funció \textit{opt\_parametros.m} i es basa en dos criteris:
+\begin{itemize}
+\item Provar diferents combinacions de $\pi_f$ i $\pi_c$ per tal de trobar el punt on ja no valgui la pena continuar pujant-les, és a dir, allà on la força adimensional creixi poc amb la pujada dels paràmetres.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./pics/F_pc_pf}
+	\caption{\(\hat{F}\) en funció de $\pi_c$ i $\pi_f$}
+\end{figure}
+\item Garantir un consum específic mínim i una màxima empenta adimensional. Així, per cada combinació  $\pi_f$ i $\pi_c$ de valors, es pot obtenir la $\alpha$ corresponent per complir aquest requisit, seguint el procediment proposat a \cite[5-10]{mattingly} que principalment es basa en imposar:
+\begin{equation*}
+	\frac{\partial S}{\partial \alpha} = 0 
+\end{equation*}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./pics/alpha_pc_pf}
+	\caption{$\alpha_{opt}$ en funció de $\pi_c$ i $\pi_f$}
+\end{figure}
+\end{itemize}
+Tot aquest el procés es pot veure molt clarament al següent diagrama:
+
+DIAGRMAMA PROCES OPIMITZACIO
+
+Finalment, els valors obtinguts són els següents:
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{lc}
+		\toprule[3pt]
+		\textbf{Paràmetre}&\textbf{Valor}\\
+		\midrule[1pt]
+		$\pi_{c}$ & 22.60 \\
+		$\pi_{f}$ & 2.20 \\
+		$\alpha_{opt}$ & 2.35 \\
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{C_opti2}
+	\caption{Selecció dels paràmetres de disseny}
+\end{figure}
+Aquests s´han comparat a valors típics vists a classe i a la bibliografia i s'ha conclòs que són uns valors raonables i realistes.
 \section{Càlcul paramètric del motor real}
+El següent pas consisteix a resoldre el turbofan sencer, sense tindre en compte \textit{mixer} o \textit{after-burner}, obtenint així la distribució de pressions i temperatures així com els diferents fluxos màssics. Bàsicament, es juga amb el diagrama T-S i amb les eficiències per tal d'aconseguir que el motor real es comporti com un d'ideal.
+
+A continuació algunes consideracions rellevants per cada etapa:
+\begin{itemize}
+\item \textbf{0t - 2t: Difussor}. Es considera adiabàtic i per tant, $\tau_d = 1$. Per altra banda, $\pi_d \approx \eta_d$
+\item \textbf{2t - 2.5t: Fan}
+\item \textbf{2.5t - 3t: Compressor de baixa}
+\item \textbf{3t - 4t: Cambra de combustió}
+\item \textbf{4t - 4.5t: Turbina d'alta}
+\item \textbf{4.5t - 6t: Turbina de baixa}
+\item \textbf{6t - 9t: Tovera Primari}
+\item \textbf{16t - 19t: Tovera Secundari}
+\end{itemize}
+Finalment, els resultats obtinguts són:
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccc}
+\toprule[3pt]
+\textbf{Etapa} &\textbf{$\bm{\pi}$} & \textbf{$\bm{\tau}$}    & \textbf{Pt} [kPa]  & \textbf{Tt} [K]  \\
+\midrule[1pt]
+0 - 0t     & 1.23   & 1.06  & 35.10   & 240.22             \\
+0t - 2t     & 0.96   & 1  & 33.70   & 240.22             \\
+2t - 2.5t/13t     & 2.20   & 1.29  & 74.13   & 309.20             \\
+2.5t - 3t     & 10.27  & 2.07  & 761.52   & 641.44             \\
+3t - 4t     & 0.94     & 0.76  & 715.83  & 1780.00             \\
+4t - 4.5t     & 0.43   & 0.85  & 311.23   & 1509.20             \\
+4.5t - 6t     & 0.51   & 0.88  & 159.00   & 1320.70             \\
+6t - 9t     & 0.98   & 0.92  & 155.81   & 1320.70            \\
+16t - 19t     & 0.98   & 0.92  & 72.65   & 309.20            \\
+\bottomrule[2pt]
+\end{tabular}
+\caption{Pressions i Temperatures - motor real}
+\end{table}
+Pel que fa als fluxos màssics:
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{lc}
+		\toprule[3pt]
+		\textbf{Paràmetre}&\textbf{Valor [kg/s]}\\
+		\midrule[1pt]
+		$m_{o}$ & 15.06 \\
+		$m_{sec}$ & 35.46 \\
+		$m_{f}$ & 0.56 \\
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{C_opti2}
+	\caption{Fluxos màssics - motor real}
+\end{figure}
+Per aquesta configuració s'obtè una empenta adimensonal de $\bm{\hat{F} = 5.5}$.

@@ -10,7 +10,7 @@ NAME_INPUT_DATA = 'DATA' ; %Fitxer amb dades generals donades
 eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
 isMixer = false; % si esta en true col·loca el mixer
-isAftBurner = true; % si esta en true calcula l'after burner
+isAftBurner = false; % si esta en true calcula l'after burner
 isTurboProp = false; % si esta en true col·loca un turboprop
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
@@ -20,7 +20,7 @@ fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
-if isTurboProp %optimitzaci� de la turbina
+if isTurboProp %optimitzaci� de la turbina
     %exercici 33 - es va seguint pas a pas
     [PI,P,TAU,T] = Compressor( PI,P,gam,T,TAU,ETA,isTurboProp);
     [P,f] = CambraCombustio( PI,P,CP,TAU,gam,ETA,h,T0,isTurboProp );

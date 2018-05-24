@@ -75,7 +75,5 @@ while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc
 end
 PI.f = pf_opt; PI.c = pc_opt; alpha = alpha(i);
 
-
-
 end
 

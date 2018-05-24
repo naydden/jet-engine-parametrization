@@ -1,7 +1,7 @@
 \select@language {catalan}
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o} i Objectius}{3}{section.1}
-\contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{4}{section.2}
-\contentsline {section}{\numberline {3}Elecci\IeC {\'o} de les condicions de disseny per optimitzaci\IeC {\'o}}{5}{section.3}
+\contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{3}{section.2}
+\contentsline {section}{\numberline {3}Elecci\IeC {\'o} de les condicions de disseny per un motor \IeC {\`o}ptim}{4}{section.3}
 \contentsline {section}{\numberline {4}C\IeC {\`a}lcul param\IeC {\`e}tric del motor real}{5}{section.4}
 \contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{6}{section.5}
 \contentsline {subsection}{\numberline {5.1}Par\IeC {\`a}metres suposats}{6}{subsection.5.1}
