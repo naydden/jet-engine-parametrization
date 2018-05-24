@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 04:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.17)  24 MAY 2018 04:14
 entering extended mode
 **./main.tex
 (main.tex
@@ -1253,7 +1253,12 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 85--87
  [][] 
  []
 
-[6] [7
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+[7
 
  <./pics/diag_helix.png>]) (parts/postcombustor.tex) (parts/consum.tex)
 [8
@@ -1275,7 +1280,7 @@ Package epstopdf Info: Source file: <./pics/sample.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/sample-eps-converted-to.pdf, id=189, 577.15625pt x 449.68pt>
+<./pics/sample-eps-converted-to.pdf, id=190, 577.15625pt x 449.68pt>
 File: ./pics/sample-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/sample-eps-converted-to.pdf>
@@ -1353,8 +1358,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 13048 strings out of 493333
- 186645 string characters out of 3139194
+ 13049 strings out of 493333
+ 186657 string characters out of 3139194
  344640 words of memory out of 3000000
  16127 multiletter control sequences out of 15000+200000
  37025 words of font info for 75 fonts, out of 3000000 for 9000
@@ -1374,9 +1379,9 @@ Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/he
 lvetic/uhvro8a.pfb>
-Output written on main.pdf (14 pages, 470937 bytes).
+Output written on main.pdf (14 pages, 472093 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 149 named destinations out of 1000 (max. 500000)
+ 391 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
