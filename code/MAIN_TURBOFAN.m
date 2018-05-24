@@ -112,10 +112,15 @@ if ~isTurboProp && ~isTP
     
     %Calcul Arees
     %Fluxos masics:
-    m5=m0+mf;
-    msortida=m0+mf+msec;
-    mentrada=m0+msec;
-    
+    if isAftBurner
+        m5=m0af+mfaf;
+        msortida=m0af+mfaf+msecaf;
+        mentrada=m0af+msecaf;
+    else
+        m5=m0+mf;
+        msortida=m0+mf+msec;
+        mentrada=m0+msec;
+    end
     
     A.e0 = Area(M0,gam.cold,P.t0,T.t0,R.cold,mentrada);
     if isMixer==true

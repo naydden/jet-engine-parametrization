@@ -17,7 +17,9 @@ P.s13 = P.t2 / ((1+((gam.cold-1)*0.5*M0^2))^(gam.cold/(gam.cold-1))); %P2 = P13
 P.s6 = P.s5;
 
 M13 = sqrt(2/(gam.cold-1)*((P.t13/P.s13)^((gam.cold-1)/(gam.cold))-1));
-
+if M13>1
+    M13=1;
+end
 % we find M6 now by computing F6 = F5 + F13
 phi_6 = R.mixer*T.t6/(gam.mixer*((sqrt(R.hot*T.t5/(gam.hot*phi(M5,gam.hot)))+alpha_p*sqrt(R.cold*T.t13/(gam.cold*phi(M13,gam.cold))))/(1+alpha_p))^2);
 % if phi_6 > 0.208 mixer ahogado y se supone M6 = 1;

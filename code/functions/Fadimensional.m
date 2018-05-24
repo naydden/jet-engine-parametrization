@@ -1,7 +1,7 @@
 function [ Fadim] = Fadimensional( f,M9,M19,alpha,T,P,gam,mixer,T0,M0,P0,isAfterBurner)
 if mixer 
     gam.hot=gam.mixer;
-    M19=M0;
+    M19=M9;
     T.s19 = T.s9;
     P.s19 = P.s9;
 end

@@ -14,12 +14,12 @@
 \contentsline {subsection}{\numberline {7.1}Par\IeC {\`a}metres suposats }{10}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Postcombustor adherit al flux primari}{10}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Resultats postcombustor}{10}{subsubsection.7.2.1}
-\contentsline {section}{\numberline {8}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{10}{section.8}
-\contentsline {section}{\numberline {9}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{10}{section.9}
-\contentsline {section}{\numberline {10}Conclusions}{10}{section.10}
-\contentsline {section}{\numberline {11}Sample Section}{11}{section.11}
-\contentsline {section}{\numberline {A}Annex: Verificaci\IeC {\'o} del codi}{14}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Verificaci\IeC {\'o} turbofan}{14}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{15}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{16}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{17}{subsection.A.4}
+\contentsline {section}{\numberline {8}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{12}{section.8}
+\contentsline {section}{\numberline {9}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{12}{section.9}
+\contentsline {section}{\numberline {10}Conclusions}{12}{section.10}
+\contentsline {section}{\numberline {11}Sample Section}{13}{section.11}
+\contentsline {section}{\numberline {A}Annex: Verificaci\IeC {\'o} del codi}{16}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Verificaci\IeC {\'o} turbofan}{16}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{17}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{18}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{19}{subsection.A.4}
