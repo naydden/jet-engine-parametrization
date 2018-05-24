@@ -18,6 +18,8 @@ isTP = false;
 
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
+
+
 %% PROCESSING - Main code
 %Calcul de les etapes del jet:
 [T,P,TAU] = Difusor( T,P,TAU,PI );
