@@ -1,23 +1,53 @@
+## -- LaTeX ----------------------------------------
+
+# core auxiliar compilation files
 *.aux
-*.glo
-*.idx
+*.lof
 *.log
+*.lot
+*.fls
+*.out
 *.toc
-*.ist
-*.acn
-*.acr
-*.alg
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+#Bibliography auxiliary files (bibtex):
 *.bbl
 *.blg
-*.dvi
-*.glg
-*.gls
-*.ilg
-*.ind
-*.lof
-*.lot
-*.maf
-*.mtc
-*.mtc1
-*.out
+
+# Build tool auxiliary files:
+*.synctex
+*.synctex(busy)
 *.synctex.gz
+*.synctex.gz(busy)
+
+# intermediate compiled files such images
+*-converted-to.*
+
+##-- Matlab ----------------------------------------
+
+# Windows default autosave extension
+*.asv
+
+
+##-- OS files ---------------------------------------
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Windows shortcuts
+*.lnk
+
+# macOS
+*DS_Store
+
+
+Deliverable 2/Deliverable2/Costs task 8.xlsx
+Deliverable 2/Deliverable2/Task 8/Justification.docx

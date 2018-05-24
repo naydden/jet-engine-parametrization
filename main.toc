@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {6.5}Elecci\IeC {\'o} de l'h\IeC {\`e}lix}{8}{subsection.6.5}
 \contentsline {section}{\numberline {7}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{10}{section.7}
 \contentsline {subsection}{\numberline {7.1}Par\IeC {\`a}metres suposats }{10}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Posctombustor adherit al flux primari}{10}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.2}Postcombustor adherit al flux primari}{10}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Resultats postcombustor}{10}{subsubsection.7.2.1}
 \contentsline {section}{\numberline {8}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{10}{section.8}
 \contentsline {section}{\numberline {9}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{10}{section.9}
