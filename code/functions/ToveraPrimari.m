@@ -12,7 +12,7 @@ end
 if isTurboProp
     TAU.f=1;
 end
-M9=sqrt((2/(gam.hot-1))*((TAU.r*TAU.d*TAU.cH*TAU.f*TAU.b*TAU.t*TAU.n)-1));
+M9=sqrt((2/(gam.hot-1))*((P.t9/P.s9)^((gam.hot-1)/gam.hot)-1));
 if ~isreal(M9)
     M9=0.1; %Fixar M9 a un valor baix
     %Considerar tovera adaptada. Es fa el procés invers per saber la mínima
