@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {6}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{6}{section.6}
 \contentsline {subsection}{\numberline {6.1}Par\IeC {\`a}metres suposats}{6}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}C\IeC {\`a}lcul del turboprop amb optimitzaci\IeC {\'o} de la pot\IeC {\`e}ncia de la turbina de baixa pressi\IeC {\'o}}{6}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}C\IeC {\`a}lcul del turboprop substituint el fan per una h\IeC {\`e}lix}{7}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.3}C\IeC {\`a}lcul del turboprop substituint el fan per una h\IeC {\`e}lix}{8}{subsection.6.3}
 \contentsline {subsection}{\numberline {6.4}Conclusions sobre el turboprop}{8}{subsection.6.4}
 \contentsline {subsection}{\numberline {6.5}Elecci\IeC {\'o} de l'h\IeC {\`e}lix}{8}{subsection.6.5}
 \contentsline {section}{\numberline {7}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{10}{section.7}
