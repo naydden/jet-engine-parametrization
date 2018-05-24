@@ -1,6 +1,7 @@
 \select@language {catalan}
 \contentsline {section}{\numberline {1}Introducci\IeC {\'o} i Objectius}{2}{section.1}
 \contentsline {section}{\numberline {2}Descripici\IeC {\'o} del/s motor/s}{3}{section.2}
+<<<<<<< HEAD
 \contentsline {section}{\numberline {3}C\IeC {\`a}lcul param\IeC {\`e}tric del motor i optimitzaci\IeC {\'o} per a les condicions de disseny}{4}{section.3}
 \contentsline {section}{\numberline {4}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}C\IeC {\`a}lcul del turboprop amb optimitzaci\IeC {\'o} de la pot\IeC {\`e}ncia de la turbina de baixa pressi\IeC {\'o}}{5}{subsection.4.1}
@@ -16,3 +17,18 @@
 \contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{11}{subsection.A.2}
 \contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{12}{subsection.A.3}
 \contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{12}{subsection.A.4}
+=======
+\contentsline {section}{\numberline {3}Elecci\IeC {\'o} de les condicions de disseny per optimitzaci\IeC {\'o}}{4}{section.3}
+\contentsline {section}{\numberline {4}C\IeC {\`a}lcul param\IeC {\`e}tric del motor real}{4}{section.4}
+\contentsline {section}{\numberline {5}C\IeC {\`a}lcul i elecci\IeC {\'o} de l'h\IeC {\`e}lix}{4}{section.5}
+\contentsline {section}{\numberline {6}C\IeC {\`a}lcul i elecci\IeC {\'o} de postcombustor}{5}{section.6}
+\contentsline {section}{\numberline {7}C\IeC {\`a}lcul de consum d\IeC {\textquoteright }aire i fuel en vol}{5}{section.7}
+\contentsline {section}{\numberline {8}C\IeC {\`a}lcul de dimensionat d\IeC {\textquoteright }\IeC {\`a}rees}{6}{section.8}
+\contentsline {section}{\numberline {9}Conclusions}{6}{section.9}
+\contentsline {section}{\numberline {10}Sample Section}{7}{section.10}
+\contentsline {section}{\numberline {A}Annex: Verificaci\IeC {\'o} del codi}{9}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Verificaci\IeC {\'o} turbofan}{9}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Verificaci\IeC {\'o} motor real}{9}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Verificaci\IeC {\'o} mixer}{10}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Verificaci\IeC {\'o} turbopropeller}{10}{subsection.A.4}
+>>>>>>> f033aef73372b47dde004b05084ed84432627307

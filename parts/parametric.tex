@@ -1,1 +1,8 @@
-\section{Càlcul paramètric del motor i optimització per a les condicions de disseny}
+\section{Elecció de les condicions de disseny per optimització}
+Bàsicament s'han de triar $\pi_c$, $\pi_f$ i $\alpha$ per tal d'obtenir el millor motor possible donades les dades de l'enunciat.
+Es recorda que:
+\begin{equation*}
+	\pi_c = \frac{P_{3t}}{P_{2t}} = \pi_{f}\times\pi_{cL} = \frac{P_{2.5t}}{P_{2t}} \times \frac{P_{3t}}{P_{2.5t}}
+\end{equation*}
+Per fer la tria,  s'ha fet un extens estudi per tal de trobar els paràmetres adequats a aquestes condicions de vol. Aquest es troba integrat a la funció \textit{opt\_parametros.m} i consisteix en provar diferents combinacions de       $\pi_f$ i $\pi_c$ per tal de trobar el punt on ja no valgui la pena continuar pujant-les, és a dir, allà on la força adimensional creixi poc amb la pujada dels paràmetres. Com que es vol garantir el mínim consum específic per cada combinació  $\pi_f$ i $\pi_c$ de valors, es pot obtenir la $\alpha$ corresponent per complir aquest requisit. Tot el procés es pot veure molt clarament al següent diagrama:
+\section{Càlcul paramètric del motor real}
