@@ -1,9 +1,9 @@
 function [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU )
 %TURBOFAN optimal parameters
 %   Compute PI.f, PI.c, alpha
-%% Considerem situació de Optimum Bypass ratio. Minimitza consum especific. (pag 370)
+%% Considerem situaciï¿½ de Optimum Bypass ratio. Minimitza consum especific. (pag 370)
 inc_c=0.4; %Increment del valor de PI.c
-max_c = 30; %Màxim PI.c assumible
+max_c = 30; %Mï¿½xim PI.c assumible
 inc_f=0.1;
 max_f=6;
 PI.c = 1 : inc_c : max_c; %Vector amb els valors de PI.c
@@ -27,7 +27,7 @@ TOL_pc = 0.2;% Maximum diff_pf value acceptable
 %}
 while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc
     i=1;
-    Fadim_anterior = 0; %always 0 for tarting
+    Fadim_anterior = 0; %always 0 for starting
     %look for pc_opt
     for pc = PI.c
         TAU.c(i) = pi2tau(pc, gam.cold);
