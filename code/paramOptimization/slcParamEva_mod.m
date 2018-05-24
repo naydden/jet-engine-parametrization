@@ -79,7 +79,7 @@ TOL_pc = 0.2;% Maximum diff_pf value acceptable
    Iteration stops when differnece between iterations of pc_opt and pf_opt
    is less than tolerance accepted.
 %}
-while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc 
+while  abs(diff_pf) > TOL_pf || abs(diff_pc) > TOL_pc 
     i=1;
     Fadim_anterior = 0; %always 0 for tarting
     %look for pc_opt
@@ -89,7 +89,7 @@ while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc
         TAU.f(i) = pi2tau(pf, gam.cold);
         alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
-        if (Fadim(i)-Fadim_anterior)/Fadim(i) < 0.0001
+        if abs(Fadim(i)-Fadim_anterior)/inc_c < 0.025
             pc_opt = pc; %optimum found
             %save convergence values for later comparation
             pc_i(k) = pc_opt;
@@ -115,7 +115,7 @@ while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc
         TAU.f(i) = pi2tau(pf, gam.cold);
         alpha(i)=1/(TAU.r*(TAU.f(i)-1))*(TAU.lamb-TAU.r*(TAU.c(i)-1)-TAU.lamb/(TAU.r*TAU.c(i))-1/4*(sqrt(TAU.r*TAU.f(i)-1)+sqrt(TAU.r-1))^2);
         Fadim(i)=a0/gc*(1+2*alpha(i))/(2*(1+alpha(i)))*(sqrt(2/(gam.cold-1)*(TAU.r*TAU.f(i)-1))-M0);
-        if abs((Fadim(i)-Fadim_anterior)/Fadim(i)) < 0.025
+        if abs((Fadim(i)-Fadim_anterior)/inc_c) < 0.025
             pf_opt = pf;
             break
         else
@@ -123,10 +123,10 @@ while  abs(diff_pf) > TOL_pf && abs(diff_pc) > TOL_pc
         end
         i = i + 1;
     end
-    pf_i(j) = pf_opt;
+    pf_i(j) = pf_opt*0.9521;
     diff_pf = pf_i(j) - pf_i(j-1);
     j = j + 1;
 end
-
+i = i-1;
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n', pf_opt, pc_opt,alpha(i));
 %PI.f = pf_opt; PI.c = pc_opt; alpha = alpha(i);
