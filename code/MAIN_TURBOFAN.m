@@ -75,7 +75,7 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
         
     %proppeller iteration
  [ m0,mf,msec ] = Fluxosmasics( f,Fadim_TP,F,a0,0);
- [Tcore, Tprop, Pow, D, n] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0);
+ [Tcore, Tprop, Pow, D, n, CThrust, CPower, J ] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0);
     
 elseif isTP
 

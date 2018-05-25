@@ -1,4 +1,4 @@
-function [Tcore, Tprop, Pow, D, n] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0)
+function [Tcore, Tprop, Pow, D, n, CThrust, CPower, Jprop ] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0)
 % tabla de valores passo40º
 %CP     CT      J
 itVal = [0.3    0.175   0.3
