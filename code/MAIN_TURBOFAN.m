@@ -9,7 +9,7 @@ NAME_INPUT_DATA = 'DATA' ; %Fitxer amb dades generals donades
 % Load data files
 eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
-isMixer = false; % si esta en true col·loca el mixer
+isMixer = true; % si esta en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
 isTurboProp = false; % si esta en true col·loca un turboprop
 isTP = false;

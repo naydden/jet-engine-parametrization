@@ -13,7 +13,8 @@ P.s5 = P.t5 / ((1+((gam.hot-1)*0.5*M5^2))^(gam.hot/(gam.hot-1)));
 
 % Since we want the flux at 6 to be as less turbulent as possible, we say
 % that P5 = P13 = P6
-P.s13 = P.t2 / ((1+((gam.cold-1)*0.5*M0^2))^(gam.cold/(gam.cold-1))); %P2 = P13
+% P.s13 = P.t2 / ((1+((gam.cold-1)*0.5*M0^2))^(gam.cold/(gam.cold-1))); %P2 = P13
+P.s13 = P.s5;
 P.s6 = P.s5;
 
 M13 = sqrt(2/(gam.cold-1)*((P.t13/P.s13)^((gam.cold-1)/(gam.cold))-1));
