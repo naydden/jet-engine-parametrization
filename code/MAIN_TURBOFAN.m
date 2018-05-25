@@ -74,57 +74,8 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
         
     %proppeller iteration
-        % tabla de valores passo40º
-                %CP     CT      J
-        itVal = [0.3    0.175   0.3
-                 0.29   0.17    0.5
-                 0.28   0.165   0.65
-                 0.27   0.16    0.8
-                 0.265  0.155   0.85
-                 0.26   0.15    0.9
-                 0.24   0.14    1.3
-                 0.23   0.13    1.4
-                 0.22   0.12    1.5
-                 ];
-                 
-        
-        %thrust
-    [ m0,mf,msec ] = Fluxosmasics( f,Fadim_TP,F,a0,0);
-    Tcore = C.cin*CP.hot*T0/v0*m0; %Tcore
-    Tprop = C.prop*CP.hot*T0/v0*m0*ETA.mec; %Tprop
-    
-        %power
-    Pow = ETA.prop*ETA.mec*m0*CP.hot*(T.t45-T.t5);
-        
-    %iteration parameters
-    finD = 2; 
-    incD = 0.1; 
-    finn = 170;
-    inc_n = 5;
-    D = 1:incD:finD; %Diametres
-    n = 1:inc_n:finn; %velocitats
-    %valors objectiu del gràfic
-    CTref = 0.09; CPref = 0.18; Jref = 1.7;
-    TOL = 1; 
-    finish = false;
-    for diam = D
-        for rev = n
-            CTit = Tprop/(rho0*rev^2*diam^4);
-            CPit = Pow/(rho0*rev^3*diam^5);
-            Jit = v0/(rev*diam);
-            
-            %check convergence
-            if (abs(CTit - CTref)<TOL || abs(CPit - CPref)<TOL || abs(Jit - Jref)<TOL)
-                D = diam;
-                n = rev;
-                finish = true;
-                break;
-            end
-            if finish
-                break;
-            end
-        end
-    end
+ [ m0,mf,msec ] = Fluxosmasics( f,Fadim_TP,F,a0,0);
+ [Tcore, Tprop, Pow, D, n, CThrust, CPower, J ] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0);
     
 elseif isTP
 
