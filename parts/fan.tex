@@ -1,7 +1,7 @@
 \section{Estudi implementació \textit{Propeller}}
-Per escollir una hèlix, cal calcular el \textit{ turboprop} que la mourà. Al \textit{turbofan} dissenyat anteriorment, a nivell pràctic, se l'hi extraurà el fan per substituir-lo per una hèlix. En aquesta secció s'explicaran els dos mètodes implementats per escollir l'hèlix: el primer consisteix en optimitzar la turbina de baixa pressió i el segon en simplement canviar el fan per una hèlix sense optimització, mantenint constant la turbina implementada.
+Per escollir una hèlix, cal calcular el \textit{ turboprop} que la mourà. Al \textit{turbofan} dissenyat anteriorment, a nivell pràctic, se l'hi extraurà el fan per substituir-lo per una hèlix. En aquesta secció s'explicaran els dos mètodes implementats per calcular el \textit{turboprop}: el primer consisteix en optimitzar la turbina de baixa pressió i el segon en simplement canviar el fan per una hèlix sense optimització, mantenint constant la turbina implementada.
 
-\noindent A nivell d'implementació, s'han incorporat subrutines a dins de les funcions de càlcul del \textit{turbofan} per tenir en compte els elements addicionals estudiats.
+\noindent A nivell d'implementació, s'han incorporat subrutines a dins de les funcions de càlcul del \textit{turbofan} per tenir en compte els elements addicionals estudiats. 
 \subsection{Càlcul del \textit{turboprop} amb optimització de la potència de la turbina de baixa pressió}
 Es comença calculant el \textit{turbojet} que alimenta l'hèlix, seguint els mateixos passos que en el turbofan des de el difusor a la tovera de sortida.
 
@@ -77,41 +77,36 @@ Mitjançant l'anàlisi d'aquests tipus de motor, s'ha vist com d'important és o
 \noindent Ara bé, donat que en cap dels dos casos s'aconsegueix extreure la suficient potencia del fluid per utilitzar l'hèlix del \textit{turboprop} com a quasi-únic element de propulsió, no es recomana implementar el \textit{turboprop} en vers del \textit{turbofan} perquè amb les característiques calculades, es tractaria d'un motor poc eficient.
 
 \subsection{Elecció de l'hèlix}
-Donat que no s'ha decidit implementar un \textit{turboprop} per les raons anteriorment esmentades, no s'ha desenvolupat un algoritme molt complex per tal d'escollir l'hèlix però si s'ha fet una aproximació de com seria l'hèlix a utilitzar. Una primera simplificació, ha sigut considerar l'hèlix de pas fixe i s'ha utilitzat el diagrama de la següent figura per determinar J a partir de $\eta_{prop}$ conegut. El diagrama és un exemple del que ens proveiria un fabricant.
-
+Tot i que s'ha decidit no implementar un \textit{turboprop} per les raons anteriorment esmentades, si que s'ha desenvolupat un algoritme per tal d'escollir l'hèlix a utilitzar. Per tal de fer-ho s'ha considerat el comportament que es pot visualitzar a la Figura \ref{diag_helix}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = 0.5\textwidth]{./pics/diag_helix}
+	\includegraphics[width=0.5\textwidth]{./pics/parametreshelix.JPG}
+	\caption{Corbes de coeficient de potència d'una hèlix de pas variable.}
 	\label{diag_helix}
-	\caption{Corba de rendiment d'una hèlix de pas fix.}
 \end{figure}
-
-\noindent S'han considerat els següents paràmetres de disseny:
-\begin{table}[H]
+\noindent Del càlcul del \textit{turboprop} obtenim l'empenta i la potència de l'hèlix, amb la qual cosa el que s'hauria de definir utilitzant la gràfica és el diàmetre i les revolucions a les quals gira l'hèlix. Per entrar a la gràfica es necessiten els següents coeficients: 
+\begin{align}
+	C_{P} &= \frac{P}{\rho n^3 D^5} \\
+	C_{T} &= \frac{T}{\rho n^2 D^4} 
+	\end{align}
+Amb els quals s'obtindria el paràmetre d'avanç: 
+\begin{align}
+	J &= \frac{V}{nD}  
+	\end{align}
+Degut a que aquests coeficients també depenen de les revolucions i el diàmetre, es necessari elaborar un procés iteratiu per tal de cercar possibles hèlixs que siguin solució. Per fer-ho s'ha creat una taula de valors a MATLAB on es relacionin $C_P$, $C_T$ i $J$ d'acord amb la gràfica \ref{diag_helix}. Per tal de simplificar el procés s'ha escollit la línia de pas de 40$^{\circ}$ per fer la taula. Seguidament s'ha iterat en valors de $n$ i $D$ fins a trobar els coeficients de potència, empenta i avanç que es corresponguessin a un punt de la gràfica definida. El resultat ha sigut el següent: 
+ \begin{table}[H]
 	\centering
 	\begin{tabular}{lc}
 		\toprule[3pt]
 		\textbf{Paràmetre}&\textbf{Valor}\\
 		\midrule[1pt]
-		$\eta_{prop}$ & 0.81\\
-		$J$ & 0.76\\
-		$D$ & 2.6m\\
-		$v_0$&600km/h\\
-				
+		$C_{p}$ & 0.195\\
+		$C_{T}$ & 0.2491\\
+		$J$ & 0.7349\\
+		$n (rev/s)$ & 126\\
+		$D (m)$ & 1.8\\
 		\bottomrule[2pt]
 	\end{tabular}
-	\label{helix_param}
-	\caption{Paràmetres de disseny de l'hèlix.}
+	\caption{Paràmetres de l'hèlix.}
 \end{table}
-\noindent Tal i com se'ns ha proposat a classe, agafem la $D$ tal que, $D = 2D_{difusor}$. Així doncs, mitjançant l'expressió 
-\begin{align}
-	J = V/nD
-\end{align}
-obtenim que el motor turboprop ha de fer girar l'hèlix de $2.6m$ a \textbf{$n=84.35 rev/s$} o el que és el mateix, \textbf{$n=5060rpm$}.\\
-
-\noindent Per últim, podem calcular la velocitat de punta de pala de les hèlix segons:
-\begin{multline}
-	v_{tip}=2\pi n\frac{D}{2} \\
-	=2\cdot\pi\cdot84.35\cdot 1.3=688.98m/s
-\end{multline}
-és fàcil veure, que $v_{tip}=688.98m/s >>> a_0 =  301.6m/s$; per tant, les puntes de l'hèlix estan en regim supersònic, fet que redueix dràsticament la seva eficiència. Aquest podria ser un argument addicional per no implementar el turboprop, ja que opcions com augmentar D per disminuir \textit{n}, comportarien un \textit{turboprop} exageradament gran.
+\noindent Al fer la iteració ens adonem que es molt difícil trobar valors que corresponguin als de la gràfica. S'hauria de tenir més informació, com per exemple tots els possibles angles de pas implementats a la taula per a fer la iteració i trobar valors adequats. 

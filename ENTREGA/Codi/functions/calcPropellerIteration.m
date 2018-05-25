@@ -54,15 +54,9 @@ for diam = D
             if (abs(CTit - CTref)<TOL && abs(CPit - CPref)<TOL && abs(Jit - Jref)<TOL)
                 D = diam;
                 n = rev;
-              
-                
-            
-                CThrust = CTit
-                 CTref
-                CPower = CPit
-                CPref
-                Jprop = Jit
-                Jref
+                CThrust = CTit;
+                CPower = CPit;
+                Jprop = Jit;
                 finish = true;
                 break;
             end

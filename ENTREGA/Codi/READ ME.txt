@@ -1,0 +1,6 @@
+Main code to run: MAIN_TUBOFAN
+OTHER FOLDERS/archives:
+	DATA --> Data for MAIN_TURBOFAN
+	functions--> functions for MAIN_TURBOFAN
+	paramOptimization --> Turbofan optimization parameters scripts
+	Verificacio --> Algorithms validation code ( the same as MAIN_TURBOFAN but whith possible different inputs)
