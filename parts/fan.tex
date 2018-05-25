@@ -28,8 +28,11 @@ Per calcular la tovera, s'assumeix que $P_{t6}=P_{t5}$ i $T_{t6}=T_{t5}$. Pe'ls 
 \noindent Per solucionar aquest problema, s'implementa una subrutina a la funció \textit{ToveraPrimari.m} amb la següent idea. Idealment s'expansionaria tot el fluid a la turbina de baixa pressió per donar el màxim de potencia a l'hèlix, però a nivell pràctic no es possible fer-ho, l'aire ha de sortir del motor. Es proposa fixar un Mach de sortida molt baix, $M_0 = 0.1$ i es recalcula $\tau_{tL}$ per aquest Mach. El resultat, es una nova $\tau_{tL}$ que simes no, no és la més optima, és més òptima que la calculada amb el turbofan.
 
 Finalment, es calculen els paràmetres característics del turboprop:
+\begin{multline}
+	C_{cin} = (\gamma_c-1)M_0\cdot\\
+	\left[\sqrt{\frac{2}{\gamma_c-1}\left(\tau_{tL}(\tau_{\lambda}+\tau_r-\tau_r\tau_{cH})-\frac{\tau_{\lambda}}{\tau_r\tau_{cH}}\right)}-M_0\right] \label{turboprop_eqn1}
+\end{multline}
 	\begin{align}
-	C_{cin} &= (\gamma_c-1)M_0\left[\sqrt{\frac{2}{\gamma_c-1}\left(\tau_{tL}(\tau_{\lambda}+\tau_r-\tau_r\tau_{cH})-\frac{\tau_{\lambda}}{\tau_r\tau_{cH}}\right)}-M_0\right] \label{turboprop_eqn1}\\
 	C_{prop} &= \eta_{prop}\eta_{mec}(1-\tau_{tL})(\tau_\lambda+\tau_r-\tau_r\tau_{cH}) \label{turboprop_eqn2}\\
 	C_{tot} &= C_{cin} + C_{prop} \label{turboprop_eqn3}
 	\end{align}
@@ -40,17 +43,17 @@ obtenint-se els següents resultats:
 		\toprule[3pt]
 		\textbf{Paràmetre}&\textbf{Valor}\\
 		\midrule[1pt]
-		$\tau_{tL}$ & 0.6740\\
-		$C_{cin}$ & 0.6145\\
-		$C_{prop}$ & 0.9636\\
-		$C_{tot}$ & 1.5781\\
+		$\tau_{tL}$ & 0.8168\\
+		$C_{cin}$ & 0.6113\\
+		$C_{prop}$ & 0.9801\\
+		$C_{tot}$ & 1.5914\\
 		
 		\bottomrule[2pt]
 	\end{tabular}
 \label{C_opti}
 \caption{Paràmetres C turboprop amb turbina de baixa pressió optimitzada}
 \end{figure}
-\noindent Tot i que $C_{cin}=0.6145$, està lluny del cas ideal; amb $C_{prop}>C_{cin}$, s'entén que la font majoritària d'empenta és l'hèlix, representant un 60\% de l'empenta del turboprop.
+\noindent Tot i que $C_{cin}=0.6113$, està lluny del cas ideal on seria 0; amb $C_{prop}>C_{cin}$, s'entén que la font majoritària d'empenta és l'hèlix, representant un 62\% de l'empenta del turboprop.
 
 \subsection{Càlcul del turboprop substituint el fan per una hèlix}
 En aquest cas, la idea es la següent. Un cop calculats els paràmetres del turbofan, es guarden $\tau_{tL}$ i $\pi_{tL}$  per utilitzar-los dins la subrutina del turboprop. Aleshores, es calculen tots el paràmetres del turboprop com en l'apartat anterior, amb la diferència de que ara, no s'optimitza la turbina de baixa pressió, es deixa la mateixa que s'ha calculat pel turbofan.
@@ -63,16 +66,16 @@ En aquest cas, la idea es la següent. Un cop calculats els paràmetres del turb
 		\textbf{Paràmetre}&\textbf{Valor}\\
 		\midrule[1pt]
 		$\tau_{tL}$ & 0.8751\\
-		$C_{cin}$ & 0.6670\\
-		$C_{prop}$ & 0.6745\\
-		$C_{tot}$ & 1.3416\\
+		$C_{cin}$ & 0.6680\\
+		$C_{prop}$ & 0.6681\\
+		$C_{tot}$ & 1.3362\\
 		
 		\bottomrule[2pt]
 	\end{tabular}
 	\label{C_opti2}
 	\caption{Paràmetres C turboprop amb turbina de baixa pressió no optimitzada}
 \end{figure}
-\noindent En aquest cas, $C_{prop}\approx C_{cin}$. Tal i com calia esperar, el fet de no optimitzar $\tau_{tL}$, fa que el fluid s'expandeixi menys ($\tau_{tL}$ major) a la turbina de baixa pressió, fent que hi hagi menys potència disponible per l'hèlix. Conseqüentment, la empenta mitjançant l'hèlix no representa més del 50\% de la total.
+\noindent En aquest cas, $C_{prop}\approx C_{cin}$. Tal i com calia esperar, el fet de no optimitzar $\tau_{tL}$, fa que el fluid s'expandeixi menys ($\tau_{tL}$ major) a la turbina de baixa pressió, fent que hi hagi menys potència disponible per l'hèlix. Conseqüentment, la empenta mitjançant l'hèlix no representa més del 50\% del conjunt motor total.
 
 \subsection{Conclusions sobre el turboprop}
 Mitjançant l'anàlisi d'aquests tipus de motor, s'ha vist com d'important és optimitzar la turbina de baixa pressió.
@@ -80,7 +83,7 @@ Mitjançant l'anàlisi d'aquests tipus de motor, s'ha vist com d'important és o
 \noindent Ara bé, donat que en cap dels dos casos s'aconsegueix extreure la suficient potencia del fluid per utilitzar l'hèlix del turboprop com a quasi-únic element de propulsió, no es recomana implementar el turboprop en vers del turbofan perquè amb les característiques calculades, es tractaria d'un turboprop poc eficient.
 
 \subsection{Elecció de l'hèlix}
-Donat que no s'ha recomanat la implementació d'un turboprop per les raons anteriorment esmentades, no s'ha desenvolupat un algoritme molt complex per tal d'escollir l'hèlix pe'ls turboprops calculats. Una primera simplificació, ha sigut considerar l'hèlix de pas fixe i s'ha utilitzat el diagrama de la Figura \ref{diag_helix}, per determinar J a partir de $\eta_{prop}$ conegut.
+Donat que no s'ha recomanat la implementació d'un turboprop per les raons anteriorment esmentades, no s'ha desenvolupat un algoritme molt complex per tal d'escollir l'hèlix pe'ls turboprops calculats. Una primera simplificació, ha sigut considerar l'hèlix de pas fixe i s'ha utilitzat el diagrama de la següent figura, per determinar J a partir de $\eta_{prop}$ conegut. El diagrama es un exemple del que ens proveiria un fabricant per tal de saber si ens interessen les seves hèlix.
 
 \begin{figure}[H]
 	\centering
@@ -106,14 +109,15 @@ Donat que no s'ha recomanat la implementació d'un turboprop per les raons anter
 	\label{helix_param}
 	\caption{Paràmetres de disseny de l'hèlix.}
 \end{figure}
-Mitjançant l'expressió 
+\noindent Tal i com se'ns ha proposat a classe, agafem la $D$ tal que, $D = 2D_{difusor}$. Així doncs, mitjançant l'expressió 
 \begin{align}
 	J = V/nD
 \end{align}
 obtenim que el motor turboprop ha de fer girar l'hèlix de $2.6m$ a \textbf{$n=84.35 rev/s$} o el que és el mateix \textbf{$n=5060rpm$}.\\
 
 \noindent Per últim, podem calcular le velocitat de punta de pala de les hèlix segons,
-\begin{equation}
-	v_{tip}=2\pi n\frac{D}{2} = 2\cdot\pi\cdot84.35\cdot 1.3=688.98m/s
-\end{equation}
-és fàcil veure, que $v_{tip}=688.98m/s >>> a_0 =  301.6m/s$, per tant, les puntes de l'hèlix segurament estan en regim supersònic, fet que redueix dràsticament la seva eficiència. Aquest, podria ser un argument addicional per no implementar el turboprop. Per tal, de reduir la velocitat de punta, es podria augmentar el radi de l'hèlix amb el fi de disminuir n, tenint en compte que com més gran el radi, més velocitat a la punta de l'hèlix.
+\begin{multline}
+	v_{tip}=2\pi n\frac{D}{2} \\
+	=2\cdot\pi\cdot84.35\cdot 1.3=688.98m/s
+\end{multline}
+és fàcil veure, que $v_{tip}=688.98m/s >>> a_0 =  301.6m/s$; per tant, les puntes de l'hèlix segurament estan en regim supersònic, fet que redueix dràsticament la seva eficiència. Aquest, podria ser un argument addicional per no implementar el turboprop, ja que opcions com augmentar D per disminuir n, comportarien un turboprop exageradament gran.
