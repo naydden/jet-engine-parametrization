@@ -11,7 +11,7 @@ La definició dels paràmetres de disseny és:
 	\alpha = \frac{m_{primari}}{m_{secundari}}
 \end{equation*}
 
-\noindent Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionades a l'enunciat i als criteris de disseny imposats. Aquests es troben integrats a la funció \textit{opt\_parametros.m}, que prova diferents combinacions de $\pi_f$ i $\pi_c$ i calcula amb elles la força adimensional. Es busca maximitzar aquest paràmetre per poder obtenir un motor petit. Tal i com es veu a la Figura \ref{Fadimensional}, al incrementar $\pi_f$ i $\pi_c$ també incrementa \(\hat{F}\) i no es possible calcular cap màxim. S'adopta la idea de que, quan al augmentar els valors de $\pi_f$ i $\pi_c$, \(\hat{F}\) no incrementa més d'un 5\% no val la pena continuar augmentant els ratis de compressió.
+\noindent Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionades a l'enunciat i als criteris de disseny imposats. Aquests es troben integrats a la funció \textit{opt\_parametros.m}, que prova diferents combinacions de $\pi_f$ i $\pi_c$ i calcula amb elles la força adimensional. Es busca maximitzar aquest paràmetre per poder obtenir un motor petit. Tal i com es veu a la Figura \ref{Fadimensional}, al incrementar $\pi_f$ i $\pi_c$ també incrementa \(\hat{F}\) i no es possible calcular cap màxim. S'adopta la idea de que, quan al augmentar els valors de $\pi_f$ i $\pi_c$, \(\hat{F}\) no incrementa més d'un 2.5\% no val la pena continuar augmentant els ratis de compressió.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.35\textwidth]{./pics/F_pc_pf}
