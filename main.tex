@@ -20,6 +20,7 @@
 \usepackage{multicol}
 \usepackage[font={small,it},labelfont=bf]{caption}
 \usepackage{bm}
+\usepackage{graphicx}
 %\usepackage{cite}
 \usepackage{commath}
 %code insert
@@ -29,10 +30,6 @@
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 %
-\hypersetup{%
-	pdfborder = {0 0 0}
-}
-
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \everymath{\displaystyle}
 \author{Eva María Urbano González, Pol Fontanes, Boyan Naydenov}
@@ -60,9 +57,7 @@
 	\today
 \end{titlepage}
 \tableofcontents
-%\lstlistoflistings
-\newpage
-\listoftables
+\lstlistoflistings
 \listoffigures
 \pagebreak
 \begin{multicols}{2}
@@ -73,7 +68,10 @@
 \input{./parts/fan}
 \input{./parts/postcombustor}
 \input{./parts/consum}
+\input{./parts/dimensionat}
 \input{./parts/conclusions}
+\newpage
+\input{./parts/sample}
 \end{multicols}
 
 
