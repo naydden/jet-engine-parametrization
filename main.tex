@@ -30,6 +30,9 @@
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 %
+\hypersetup{%
+	pdfborder = {0 0 0}
+}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \everymath{\displaystyle}
 \author{Eva María Urbano González, Pol Fontanes, Boyan Naydenov}
@@ -56,11 +59,13 @@
 	\vspace{1cm}
 	\today
 \end{titlepage}
-\tableofcontents
-\lstlistoflistings
-\listoffigures
-\pagebreak
 \begin{multicols}{2}
+\tableofcontents
+\vspace{5cm}
+\listoftables
+\listoffigures
+\newpage
+%\begin{multicols}{2}
 \input{./parts/intro}
 \input{./parts/descripcio}
 \input{./parts/parametric}
@@ -68,17 +73,16 @@
 \input{./parts/fan}
 \input{./parts/postcombustor}
 \input{./parts/consum}
-\input{./parts/dimensionat}
 \input{./parts/conclusions}
 \newpage
 %\input{./parts/sample}
-\end{multicols}
+
 
 
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{biblio}
-
+\end{multicols}
 \clearpage
 
 \begin{appendix}

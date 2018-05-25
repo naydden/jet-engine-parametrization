@@ -4,7 +4,7 @@ Com s'ha vist amb anterioritat, per als nostres paràmetres de disseny el \texti
 \subsection{Paràmetres suposats }
 Tot i que la gran majoria de paràmetres venien donats per l'enunciat del treball, amb l'objectiu de fer-lo més realista s'han suposat certes eficiències específiques i una altra temperatura de sortida del component a estudiar.
 
-\begin{figure}[H]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{lc}
 		\toprule[3pt]
@@ -19,14 +19,14 @@ Tot i que la gran majoria de paràmetres venien donats per l'enunciat del trebal
 	\end{tabular}
 	\label{ABparam}
 	\caption{Paràmetres suposats al postcombustor.}
-\end{figure}
+\end{table}
 
 
 \noindent Per calcular el postcombustor es comença solucionant el cas del \textit{turbofan} real com en els apartats anteriors, fins obtenir els valors dels seus paràmetres a la sortida de la turbina de baixa pressió.
 
 \noindent Després, comença el càlcul del postcombustor. Es considera que $T_{t9} = T_{t7}$, $P_{t9}=\pi_nP_{t6}$ i es defineix $\tau_{\lambda AB} = \frac{Cp_{AB}T_{t7}}{Cp_cT_0}$.
 
-\noindent Aleshores, es calcula la fracció de massa de combustible ($f_{AB}=\dot{m}_{fAB}/\dot{m}_0$) que el postcombustor afegeix al flux primari. De igual manera que en el cas de la cambra de combustió ja existent, no s'ha considerad que $(1+f)=1$.
+\noindent Aleshores, es calcula la fracció de massa de combustible ($f_{AB}=\dot{m}_{fAB}/\dot{m}_0$) que el postcombustor afegeix al flux primari. De igual manera que en el cas de la cambra de combustió ja existent, no s'ha considerat que $(1+f)=1$.
 
 \begin{equation}
 	f_{AB}=(1+f)\frac{\tau_{\lambda AB}-\tau_{\lambda}\tau_t}{\eta_{AB}\frac{h}{Cp_cT_0}-\tau_{\lambda AB}}
@@ -35,7 +35,7 @@ Tot i que la gran majoria de paràmetres venien donats per l'enunciat del trebal
  
 \noindent Les seccions situades després del postcombustor són recalculades ja que els paràmetres de sortida del postcombustor les modifica. Es calculen doncs les toveres del primari i del secundari i es re-defineix $f = f +f_{AB}$ dins el codi per poder aplicar la funció de càlcul de la força adimensional (\textit{Fadimensional.m}). S'acaba el càlcul del postcombustor extraient els cabals màssics característics del motor amb postcombustor (\textit{Fluxosmasics.m}).
 
-A la següent taula, es compara el motor dissenyat amb i sense postcombustor, per decidir sobre la seva eficàcia.
+\noindent A la següent taula, es compara el motor dissenyat amb i sense postcombustor, per decidir sobre la seva eficàcia.
 \begin{table}[H]
 	\centering
 	\resizebox{8cm}{!}{

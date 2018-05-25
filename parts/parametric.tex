@@ -1,6 +1,6 @@
 \section{Selecció de les condicions de disseny}
 Donada l'alçada i la velocitat de vol, així com $T_{t4}$, les tres variables necessàries per fer el disseny són $\pi_c$, $\pi_f$ i $\alpha$. Aquests s'han d'escollir per tal d'obtenir el millor motor possible donades les dades de l'enunciat mostrades a l'apartat \ref{descripcio}.
-La definició dels paràmetres de disseny es:
+La definició dels paràmetres de disseny és:
 \begin{equation*}
 	\pi_c = \frac{P_{3t}}{P_{2t}} = \pi_{f}\times\pi_{cL} = \frac{P_{2.5t}}{P_{2t}} \times \frac{P_{3t}}{P_{2.5t}}
 \end{equation*}
@@ -11,7 +11,7 @@ La definició dels paràmetres de disseny es:
 	\alpha = \frac{m_{primari}}{m_{secundari}}
 \end{equation*}
 
-\noindent Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionades a l'enunciat i als criteris de disseny imposats. Aquests es troben integrat a la funció \textit{opt\_parametros.m}, que prova diferents combinacions de $\pi_f$ i $\pi_c$ i calcula amb elles la força adimensional. Es busca maximitzar aquest paràmetre per poder obtenir un motor petit. Tal i com es veu a la Figura \ref{Fadimensional}, al incrementar $\pi_f$ i $\pi_c$ també incrementa \(\hat{F}\) i no es possible calcular cap màxim. S'adopta la idea de que, quan al augmentar els valors de $\pi_f$ i $\pi_c$, \(\hat{F}\) no incrementa més d'un 5\% no val la pena continuar augmentant els ratis de compressió.
+\noindent Per fer la tria,  s'ha fet un extens estudi amb l'objectiu de trobar els paràmetres adequats a les condicions de vol proporcionades a l'enunciat i als criteris de disseny imposats. Aquests es troben integrats a la funció \textit{opt\_parametros.m}, que prova diferents combinacions de $\pi_f$ i $\pi_c$ i calcula amb elles la força adimensional. Es busca maximitzar aquest paràmetre per poder obtenir un motor petit. Tal i com es veu a la Figura \ref{Fadimensional}, al incrementar $\pi_f$ i $\pi_c$ també incrementa \(\hat{F}\) i no es possible calcular cap màxim. S'adopta la idea de que, quan al augmentar els valors de $\pi_f$ i $\pi_c$, \(\hat{F}\) no incrementa més d'un 5\% no val la pena continuar augmentant els ratis de compressió.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.35\textwidth]{./pics/F_pc_pf}
@@ -32,7 +32,7 @@ Arribant així a:
 	\caption{$\alpha_{opt}$ en funció de $\pi_c$ i $\pi_f$}
 \end{figure}
 Finalment, els valors obtinguts són els següents:
-\begin{figure}[H]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{lc}
 		\toprule[3pt]
@@ -45,7 +45,7 @@ Finalment, els valors obtinguts són els següents:
 	\end{tabular}
 	\label{C_opti2}
 	\caption{Selecció dels paràmetres de disseny}
-\end{figure}
+\end{table}
 \noindent Aquests s'han comparat a valors típics d'altres aeronaus i s'ha conclòs que són uns valors raonables i realistes. Tot el procés realitzat es pot veure esquematitzat a la Figura \ref{opt}.
 Resumidament, s'ha anat variant $\pi_c$ o $\pi_f$ fins arribar a una convergència de valors que donés un increment no significatiu de $\hat{F}$.  
 \begin{figure}[H]
@@ -58,8 +58,8 @@ Resumidament, s'ha anat variant $\pi_c$ o $\pi_f$ fins arribar a una convergènc
 \label{motoreal}
 El següent pas consisteix a resoldre el turbofan real sencer, sense tindre en compte \textit{mixer} ni \textit{afterburner}, obtenint així la distribució de pressions, temperatures i fluxos màssics. A continuació es mostren algunes consideracions rellevants per a cada etapa \footnote{La I indica ideal mentre que la R, real.}:
 \begin{itemize}
-\item \textbf{0t - 2t: Difusor}. Es considera adiabàtic i per tant, $\tau_d = 1$. Per altra banda si que es produeix una pèrdua de pressió total que es manifesta com $\pi_d = \eta_d$.
-\item \textbf{2t - 2.5t: Fan}. Com que la tasca primordial del fan es incrementar la pressió, es fixa la pressió que assoleix el compressor ideal i es dissenya el cas real per tal que assoleixi el mateix objectiu, es a dir, la pressió de sortida es manté constant però la temperatura varia segons la eficiència. Així, $P_{t25}^R = P_{t25}^I$ tot i que $T_{t25}^R \neq T_{t25}^I$ . Coneixent el rendiment $\eta_f$ es troben les noves temperatures.
+\item \textbf{0t - 2t: Difusor}. Es considera adiabàtic i per tant, $\tau_d = 1$. Per altra banda, si que es produeix una pèrdua de pressió total que es manifesta com $\pi_d = \eta_d$.
+\item \textbf{2t - 2.5t: Fan}. Com que la tasca primordial del fan es incrementar la pressió, es fixa la pressió que assoleix el compressor ideal i es dissenya el cas real per tal que assoleixi el mateix objectiu, és a dir, la pressió de sortida es manté constant però la temperatura varia segons la eficiència. Així, $P_{t25}^R = P_{t25}^I$ tot i que $T_{t25}^R \neq T_{t25}^I$ . Coneixent el rendiment $\eta_f$ es troben les noves temperatures.
 \item \textbf{2.5t - 3t: Compressor de baixa}. La mateixa explicació del fan és vàlida per al compressor de baixa doncs es dissenya amb el mateix criteri.
 \item \textbf{3t - 4t: Cambra de combustió}. En un cas ideal la combustió es produeix de forma isòbara mentre que al cas real hi ha una pèrdua de pressió total. Es dissenya per tal d'arribar a la $T_{t4}$ especificada. El consum de combustible es troba igualant la calor generada per la crema a la calor proporcionada al fluid. Es important esmentar que en la realització del codi no s'han fet simplificacions com considerar $C_P=ct$ o $(1+f)\simeq1$.
 \item \textbf{4t - 4.5t: Turbina d'alta}. L'objectiu de la tovera real serà el d'aconseguir expandir el fluid per tal d'aportar el treball necessari al compressor. Per resoldre la turbina doncs, cal igualar treballs. Concretament: $\dot{W_{cH}^R} = \dot{W_{tH}^R} $. D'aquesta igualtat s'obté $\tau_{tH}^R$ que si es combina amb $\eta_{tH}$ s'obté $\tau_{tH}^I$ que permet trobar  $P_{tH}^{I} = P_{tH}^{R}$.
@@ -90,7 +90,7 @@ Finalment, els resultats obtinguts que dóna el programa \textbf{MAIN\_TURBOFAN.
 \caption{Pressions i Temperatures - motor real}
 \end{table}
 Pel que fa als fluxos màssics:
-\begin{figure}[H]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{lc}
 		\toprule[3pt]
@@ -103,5 +103,5 @@ Pel que fa als fluxos màssics:
 	\end{tabular}
 	\label{C_opti2}
 	\caption{Fluxos màssics - motor real}
-\end{figure}
+\end{table}
 Per aquesta configuració s'obté una empenta adimensonal de $\bm{\hat{F} = 6.29}$.

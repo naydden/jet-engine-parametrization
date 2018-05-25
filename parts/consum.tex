@@ -1,2 +1,26 @@
-\section{Càlcul de consum d’aire i fuel en vol}
-Aqui hay que poner el motor final propuesto, fuerza adimensional, consumo de aire, consumo de combustible i areas. 
+\section{Decisió final sobre la motorització de l'aeronau}
+En aquesta secció es farà un breu resum sobre l'obtingut amb els estudis d'implementació de \textit{mixer}, \textit{propeller} i \textit{afterburner}.
+\begin{itemize}
+\item \textbf{Mixer}: Amb la implementació del \textit{mixer} s'obté una empenta adimensional més petita el que voldria dir que el motor hauria de ser més gran per a produir la mateixa força. Es decideix no implementar cap \textit{mixer}.
+\item \textbf{Hèlix}: Per als dos estudis fets sobre incorporació d'hèlix, aquesta no proporciona la majoria de l'empenta i hi hauria problemes de velocitat supersònica a la punta d'aquesta. Es decideix no implementar cap hèlix.
+\item \textbf{Afterburner}: En el cas del post-combustor l'empenta adimensional si disminueix fent el motor més petit però en contrapartida el consum de combustible augmenta. Com que un dels criteris de disseny es minimitzar el consum de fuel i la geometria no es restrictiva es decideix no implementar cap post-combustor.  
+\end{itemize}
+Amb aquestes consideracions el motor final es el motor \textit{turbofan} original, amb les següents característiques principals en quant a àrees:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lc}
+		\toprule[3pt]
+		\textbf{Paràmetre}&\textbf{Valor}\\
+		\midrule[1pt]
+		$\dot{m_{o}}(kg/s)$ & 13.17 \\
+		$\dot{m_{sec}}(kg/s)$ & 55.51 \\
+		$\dot{m_{f}}(kg/s)$ & 0.48 \\
+		$\hat{F}$&6.29\\
+		$A_0 (m^2)$&0.94\\
+		$A_9(m^2)$ &0.27\\
+		$A_{19}(m^2)$&0.22\\
+		\bottomrule[2pt]
+	\end{tabular}
+	\caption{Valors finals del motor escollit.}
+\end{table}
