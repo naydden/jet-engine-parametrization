@@ -15,7 +15,6 @@ isTurboProp = false; % si esta en true col·loca un turboprop
 isTP = false;
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
-
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
     PI.f, PI.c,alpha);
 
