@@ -11,8 +11,8 @@ eval(NAME_INPUT_DATA); %Carregar el codi
 %% Selector seccions - INPUT
 isMixer = false; % si esta en true col·loca el mixer
 isAftBurner = false; % si esta en true calcula l'after burner
-isTurboProp = false; % si esta en true col·loca un turboprop
-isTP = false;
+isTurboProp = false; % si esta en true col·loca un turboprop optimizado
+isTP = false; % si esta en true col·loca un turboprop sin optimizar
 %% PRE-PROCESSING - Find design optimum parameters PI.f, PI.c, alpha
 [ PI, alpha ] = opt_parameters( M0, a0, gam, gc, PI, TAU );
 fprintf('The optimum values are: \n pi_f = %.2f\n pi_c = %.2f\n alpha = %.2f\n',...
@@ -72,11 +72,8 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     [C] = TurboProp(P,PI,gam,ETA,T,TAU, T0, M0 );
 %     [C, ETA] = TP(P,PI,gam,ETA,T,TAU,T0,M0,f,M9,P0,R,h,CP, isTP );
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
-        
-    %proppeller iteration
- [ m0,mf,msec ] = Fluxosmasics( f,Fadim_TP,F,a0,0);
- [Tcore, Tprop, Pow, D, n, CThrust, CPower, J ] = calcPropellerIteration(m0, CP, C, v0, T0, ETA, T, rho0);
-    
+    Tcore = C.cin*CP.hot*T0/v0; %Tcore/m0
+    Tprop = C.prop*CP.hot*T0/v0; %Tprop/m0
 elseif isTP
 
 else %Tovera sense turboporp ni mixer
