@@ -74,6 +74,20 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     Fadim_TP = C.tot*CP.cold*T0/(v0*a0);
         
     %proppeller iteration
+        % tabla de valores passo40º
+                %CP     CT      J
+        itVal = [0.3    0.175   0.3
+                 0.29   0.17    0.5
+                 0.28   0.165   0.65
+                 0.27   0.16    0.8
+                 0.265  0.155   0.85
+                 0.26   0.15    0.9
+                 0.24   0.14    1.3
+                 0.23   0.13    1.4
+                 0.22   0.12    1.5
+                 ];
+                 
+        
         %thrust
     [ m0,mf,msec ] = Fluxosmasics( f,Fadim_TP,F,a0,0);
     Tcore = C.cin*CP.hot*T0/v0*m0; %Tcore
