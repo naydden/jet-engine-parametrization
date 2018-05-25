@@ -97,7 +97,7 @@ elseif isTurboProp %Tovera si tenim turboprop i no tenim mixer
     Pow = ETA.prop*ETA.mec*m0*CP.hot*(T.t45-T.t5);
         
     %iteration parameters
-    finD = 5; 
+    finD = 2; 
     incD = 0.1; 
     finn = 170;
     inc_n = 5;
