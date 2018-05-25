@@ -1,4 +1,3 @@
-\clearpage
 \section{Càlcul i elecció de postcombustor}
 Com s'ha vist amb anterioritat, el mixer pe'ls nostres paràmetres donava problemes a l'implementar-lo. Així doncs, es decideix calcular un postcombustor que només vagi adherit al core del turbofan, creant la postcombustió del flux primari.
 
@@ -41,31 +40,36 @@ Per calcular el postcombustor, s'ha seguit la referencia dels problemes solucion
 
 \subsubsection{Resultats postcombustor}
 A la següent taula, es compara el motor dissenyat amb i sense postcombustor, per decidir sobre la seva eficàcia.
-\begin{figure}[H]
+\begin{table}[H]
 	\centering
-	\begin{tabular}{lcc}
+	\resizebox{8cm}{!}{
+		\begin{tabular}{lcc}
 		\toprule[3pt]
 		\textbf{Paràmetre}&\textbf{Valor amb AB}&\textbf{Valor sense AB}\\
 		\midrule[1pt]
-		$\hat{F}$ & $7.02$ & $5.50$\\
-		$ \dot{m}_0$ & $11.80kg/s$ & $15.06kg/s$\\
-		$ \dot{m}_f$ & $0.90kg/s$ & $0.56kg/s$\\
-		$ f$ & $0.0775$ & $0.0369$\\
-		$D_0$ & $82.99cm$ & $93.76cm$\\
-		$D_9$ & $35.63cm$ & $34.01cm$\\
-		$T_{t9}$ & $2400K$ & $1320K$\\
+		$\hat{F}$ & $8.6803$ & $6.2908$\\
+		$ \dot{m}_0$ & $9.55kg/s$ & $13.18kg/s$\\
+		$ \dot{m}_f$ & $0.81kg/s$ & $0.48kg/s$\\
+		$ f$ & $0.0850$ & $0.0365$\\
+		$D_0$ & $93.06cm$ & $109.32cm$\\
+		$D_9$ & $61.56cm$ & $58.12cm$\\
+		$T_{t9}$ & $2400K$ & $1017K$\\
 		
 		\bottomrule[2pt]
-	\end{tabular}
+	\end{tabular}}
 	\label{ABres}
 	\caption{Resultats d'implementar el postcombustor.}
-\end{figure}
+\end{table}
+
+
 
 \noindent La comparativa de resultats, dona informació molt interessant. Per començar, amb el postcombustor la força adimensional ($\hat{F}$)  augmenta. Podem explicar aquest comportament, perquè $ \dot{m}_0$ disminueix i $\hat{F}=F/(\dot{m}_0a_0)$. Qualitativament, el fet d'afegir massa de combustible (més dens que l'aire) i treure l'aire per la tovera a una temperatura més elevada, provoca que amb menys massa ejectada (però amb més densitat), s'aconsegueixi la mateixa empenta.
 
-\noindent Tanmateix, el cabal màssic de combustible total augmenta, perquè tot i que $ \dot{m}_f$ és aproximadament un terç més baix, el paràmetre $ f$ és més del doble.
+\noindent Tanmateix, el cabal màssic de combustible total augmenta, perquè tot i que $ \dot{m}_0$ amb postcombustor és aproximadament un terç més baix  que $ \dot{m}_0$ sense, el paràmetre $ f$ és més del doble pel cas del postcombustor.
 
-\noindent Per últim, la variació d'àrees de sortida i entrada no es significativa, tot i que podem destacar, que l'àrea d'entrada es menor degut a que necessitem un flux d'aire menor, però la de sortida es major, ja que ejectem partícules més denses a més temperatura que sense el postcombustor.
+\noindent Per últim, la variació d'àrees de sortida i entrada no es significativa, tot i que podem destacar, que l'àrea d'entrada amb postcombustor es menor degut a que necessitem un flux d'aire $ \dot{m}_0$ menor.
 
-\noindent Com a conclusió d'aquest apartat, podríem afirmar que posar un postcombustor surt a compte sempre i quant, el consum del combustible no suposi un problema; ja que, amb postcombustor aquest motor consumeix prop del doble de combustible que sense i, a canvi, el motor només redueix la seva envergadura a l'entrada en 10cm. Si no hi ha uns condicionants geomètrics molt restrictius, no consideraríem utilitzar un postcombustor al turbofan. 
+\noindent Ara bé, l'àrea de sortida es major al posar el postcombustor, ja que, ejectem partícules més denses, a més temperatura que sense el postcombustor.
+
+\noindent Com a conclusió d'aquest apartat, podríem afirmar que posar un postcombustor surt a compte sempre i quant, el consum del combustible no suposi un problema (pocs cops passa); ja que, amb postcombustor aquest motor consumeix prop del doble de combustible que sense i, a canvi, el motor només redueix la seva envergadura a l'entrada en 16cm. Si no hi ha uns condicionants geomètrics molt restrictius, no consideraríem utilitzar un postcombustor al turbofan. 
 
