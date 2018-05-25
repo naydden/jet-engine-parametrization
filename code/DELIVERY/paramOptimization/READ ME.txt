@@ -1,0 +1,2 @@
+Main code to run: slcParamEva_mod
+in old_atempts folder there are unfinish procedures to calculate PIf, PIc and alpha
